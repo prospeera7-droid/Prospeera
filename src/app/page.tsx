@@ -25,23 +25,25 @@ const services = [
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center">
-      <section className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 bg-black">
-        <div className="absolute inset-0 z-0">
+    <>
+      <section className="relative w-full h-screen overflow-hidden">
+        <div className="absolute inset-0 z-0 bg-black">
           <Sphere />
         </div>
-        <div className="max-w-4xl z-10">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
-            Prospeera
-          </h1>
-          <p className="text-xl md:text-2xl text-gray-300 mb-10">
-            Accounting & Financial Services for Freelancers.
-          </p>
-          <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-gray-200">
-            <Link href="/contact">
-              Get Your Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+          <div className="max-w-4xl">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
+              Prospeera
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-300 mb-10">
+              Accounting & Financial Services for Freelancers.
+            </p>
+            <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-gray-200">
+              <Link href="/contact">
+                Get Your Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </div>
         </div>
       </section>
 
@@ -72,6 +74,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { usePathname } from 'next/navigation';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -17,21 +18,27 @@ const navLinks = [
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      // For the homepage, the header should become opaque only after scrolling past the hero section (100vh)
+      // For other pages, it should become opaque after scrolling a little bit (10px)
+      const scrollThreshold = pathname === '/' ? window.innerHeight : 10;
+      setIsScrolled(window.scrollY > scrollThreshold);
     };
     window.addEventListener('scroll', handleScroll);
+    // Also call it once to set initial state
+    handleScroll();
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
-  }, []);
+  }, [pathname]);
 
   return (
     <header className={cn(
-      "sticky top-0 z-50 w-full transition-all duration-300",
-      isScrolled ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent"
+      "fixed top-0 z-50 w-full transition-all duration-300",
+      isScrolled || pathname !== '/' ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent border-b-transparent"
     )}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
