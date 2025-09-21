@@ -25,12 +25,11 @@ export function Header() {
       const scrollThreshold = pathname === '/' ? window.innerHeight * 0.9 : 10;
       setIsScrolled(window.scrollY > scrollThreshold);
     };
-    
-    // Set initial state
+
     handleScroll();
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -38,11 +37,11 @@ export function Header() {
 
   return (
     <header className={cn(
-      "fixed top-0 z-50 w-full transition-colors duration-300",
-      isScrolled || isOpen ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent border-b-transparent"
+      "fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl transition-all duration-300",
+      isScrolled || isOpen ? "bg-background/80 backdrop-blur-sm shadow-lg rounded-xl border" : "bg-transparent border-transparent"
     )}>
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
           <Link href="/" className="text-2xl font-bold hover:opacity-80 transition-opacity">
             Prospeera
           </Link>
@@ -65,7 +64,7 @@ export function Header() {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-background border-t">
+        <div className="md:hidden bg-background/95 border-t">
           <nav className="flex flex-col space-y-4 p-4">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="text-lg font-medium hover:bg-accent p-2 rounded-md" onClick={() => setIsOpen(false)}>
