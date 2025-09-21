@@ -24,7 +24,7 @@ const services = [
 export default function Home() {
   return (
     <>
-      <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4">
+      <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
         <div className="max-w-4xl">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
             Prospeera
