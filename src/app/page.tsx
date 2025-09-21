@@ -21,14 +21,7 @@ const services = [
   },
 ];
 
-// Artificial delay to ensure the loading screen is visible
-async function sleep(ms: number) {
-  return new Promise(resolve => setTimeout(resolve, ms));
-}
-
 export default async function Home() {
-  await sleep(2000); // Wait for 2 seconds
-
   return (
     <>
       <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
