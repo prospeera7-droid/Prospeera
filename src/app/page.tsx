@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calculator, FileText, PiggyBank } from 'lucide-react';
 import Link from 'next/link';
-import Sphere from '@/components/Sphere';
 
 const services = [
   {
@@ -26,11 +25,7 @@ const services = [
 export default function Home() {
   return (
     <>
-      <section className="relative w-full h-screen overflow-hidden">
-        <div className="absolute inset-0 z-0 bg-black">
-          <Sphere />
-        </div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-4">
+      <section className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 bg-black">
           <div className="max-w-4xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
               Prospeera
@@ -44,7 +39,6 @@ export default function Home() {
               </Link>
             </Button>
           </div>
-        </div>
       </section>
 
       <section id="services" className="w-full py-20 lg:py-32 bg-background">
