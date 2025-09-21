@@ -5,7 +5,7 @@ import RotatingEarth from "@/components/RotatingEarth";
 export default function Loading() {
   return (
     <div className="fixed inset-0 flex items-center justify-center bg-background z-[100]">
-      <RotatingEarth width={700} height={500} />
+      <RotatingEarth width={200} height={200} />
     </div>
   );
 }
