@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Target, Eye } from 'lucide-react';
+import { ProfileCard } from "@/components/ProfileCard";
 
 export default function AboutUsPage() {
   return (
@@ -11,7 +12,7 @@ export default function AboutUsPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
         <Card className="bg-transparent border shadow-sm hover:shadow-xl transition-shadow duration-300">
           <CardHeader className="items-center text-center">
             <Target className="h-10 w-10 mb-4 text-primary" />
@@ -35,19 +36,18 @@ export default function AboutUsPage() {
             </p>
           </CardContent>
         </Card>
-
-        <Card className="bg-transparent border shadow-sm hover:shadow-xl transition-shadow duration-300">
-          <CardHeader className="items-center text-center">
-            <Users className="h-10 w-10 mb-4 text-primary" />
-            <CardTitle className="text-2xl font-semibold">Our Values</CardTitle>
-          </CardHeader>
-          <CardContent className="text-center">
-            <p className="text-muted-foreground">
-              Transparency, integrity, and partnership. We believe in building long-term relationships based on trust and a deep understanding of our clients' individual needs and goals. Your success is our success.
-            </p>
-          </CardContent>
-        </Card>
       </div>
+
+      <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Meet Our Founder</h2>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            The visionary behind Prospeera's success.
+          </p>
+      </div>
+      <div className="flex justify-center">
+        <ProfileCard />
+      </div>
+
     </div>
   );
 }
