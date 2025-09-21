@@ -37,8 +37,8 @@ export function Header() {
 
   return (
     <header className={cn(
-      "fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl transition-all duration-300",
-      isScrolled || isOpen ? "bg-background/80 backdrop-blur-sm shadow-lg rounded-xl border" : "bg-transparent border-transparent"
+      "fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl transition-all duration-300 rounded-xl",
+      isScrolled || isOpen ? "bg-background/80 backdrop-blur-sm shadow-lg border border-border/50 bg-gradient-to-b from-border/20 to-transparent" : "bg-transparent border-transparent"
     )}>
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
