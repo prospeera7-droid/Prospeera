@@ -46,7 +46,7 @@ export default function ServicesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {allServices.map((service, index) => (
-          <Card key={index} className="bg-background/80 backdrop-blur-sm shadow-xl transition-shadow duration-300">
+          <Card key={index} className="bg-background/80 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl">
             <CardHeader className="flex flex-row items-center gap-4">
               {service.icon}
               <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
