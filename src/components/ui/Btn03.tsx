@@ -4,7 +4,6 @@ import { cn } from "@/lib/utils"
 import { motion, useAnimate } from "framer-motion"
 import { useEffect, useState, useCallback, forwardRef } from "react"
 import { Button, ButtonProps } from "@/components/ui/button"
-import { Slot } from "@radix-ui/react-slot"
 
 interface Btn03Props extends ButtonProps {
   particleCount?: number;
@@ -59,7 +58,7 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
 
     return (
       <Button
-        ref={scope}
+        ref={scope as React.Ref<any>}
         asChild={asChild}
         className={cn(
           "relative touch-none overflow-hidden",
@@ -71,24 +70,43 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
         onTouchEnd={handleInteractionEnd}
         {...props}
       >
-        <>
-          {particles.map((particle, index) => (
-            <motion.div
-              key={index}
-              custom={index}
-              initial={{ x: particle.x, y: particle.y }}
-              className={cn(
-                "absolute w-1.5 h-1.5 rounded-full",
-                "bg-primary-foreground/50",
-                "transition-opacity duration-300",
-                isHovered ? "opacity-100" : "opacity-40",
-              )}
-            />
-          ))}
-          <span className="relative z-10 w-full flex items-center justify-center gap-2">
-            {children}
-          </span>
-        </>
+        {asChild ? (
+            <>
+                {children}
+                {particles.map((particle, index) => (
+                    <motion.div
+                    key={index}
+                    custom={index}
+                    initial={{ x: particle.x, y: particle.y }}
+                    className={cn(
+                        "absolute w-1.5 h-1.5 rounded-full",
+                        "bg-primary-foreground/50",
+                        "transition-opacity duration-300",
+                        isHovered ? "opacity-100" : "opacity-40",
+                    )}
+                    />
+                ))}
+            </>
+        ) : (
+            <>
+                {particles.map((particle, index) => (
+                    <motion.div
+                    key={index}
+                    custom={index}
+                    initial={{ x: particle.x, y: particle.y }}
+                    className={cn(
+                        "absolute w-1.5 h-1.5 rounded-full",
+                        "bg-primary-foreground/50",
+                        "transition-opacity duration-300",
+                        isHovered ? "opacity-100" : "opacity-40",
+                    )}
+                    />
+                ))}
+                <span className="relative z-10 w-full flex items-center justify-center gap-2">
+                    {children}
+                </span>
+            </>
+        )}
       </Button>
     )
   }
