@@ -30,6 +30,13 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  webpack: (config, { isServer }) => {
+    // Make d3 available to the server-side rendering
+    if (isServer) {
+      config.externals.push('d3');
+    }
+    return config;
+  },
 };
 
 export default nextConfig;
