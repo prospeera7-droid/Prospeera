@@ -15,7 +15,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Loader2 } from "lucide-react";
+import { Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 
@@ -103,8 +103,17 @@ export function ContactForm() {
           )}
         />
         <AnimatedButton type="submit" className="w-full" disabled={isSubmitting}>
-          {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          {isSubmitting ? 'Sending...' : 'Send Message'}
+          {isSubmitting ? (
+            <>
+              <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+              Sending...
+            </>
+          ) : (
+            <>
+              <Send className="mr-2 h-4 w-4" />
+              Send Message
+            </>
+          )}
         </AnimatedButton>
       </form>
     </Form>
