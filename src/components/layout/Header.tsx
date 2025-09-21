@@ -22,14 +22,15 @@ export function Header() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // For the homepage, the header should become opaque only after scrolling past the hero section (100vh)
-      // For other pages, it should become opaque after scrolling a little bit (10px)
-      const scrollThreshold = pathname === '/' ? window.innerHeight : 10;
+      const scrollThreshold = pathname === '/' ? window.innerHeight * 0.9 : 10;
       setIsScrolled(window.scrollY > scrollThreshold);
     };
-    window.addEventListener('scroll', handleScroll);
-    // Also call it once to set initial state
+    
+    // Set initial state
     handleScroll();
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -37,8 +38,8 @@ export function Header() {
 
   return (
     <header className={cn(
-      "fixed top-0 z-50 w-full transition-all duration-300",
-      isScrolled || pathname !== '/' ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent border-b-transparent"
+      "fixed top-0 z-50 w-full transition-colors duration-300",
+      isScrolled || isOpen ? "bg-background/80 backdrop-blur-sm border-b" : "bg-transparent border-b-transparent"
     )}>
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
