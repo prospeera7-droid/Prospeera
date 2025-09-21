@@ -1,6 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Target, Eye } from 'lucide-react';
 import { ProfileCard } from "@/components/ProfileCard";
+import RotatingEarth from "@/components/RotatingEarth";
 
 export default function AboutUsPage() {
   return (
@@ -31,9 +32,7 @@ export default function AboutUsPage() {
             <CardTitle className="text-2xl font-semibold">Our Vision</CardTitle>
           </CardHeader>
           <CardContent className="text-center">
-            <p className="text-muted-foreground">
-              We envision a world where every freelancer has the financial literacy and support to build a sustainable, thriving business and secure their financial future with confidence and peace of mind.
-            </p>
+             <RotatingEarth className="w-full h-full" />
           </CardContent>
         </Card>
       </div>
