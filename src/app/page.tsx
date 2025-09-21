@@ -44,14 +44,14 @@ export default function Home() {
             </div>
         </section>
 
-        <section id="services" className="w-full py-20 lg:py-32 bg-background">
+        <section id="services" className="w-full py-20 lg:py-32 bg-transparent">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               Our Core Services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {services.map((service, index) => (
-                <Card key={index} className="bg-transparent border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col text-center items-center p-6">
+                <Card key={index} className="bg-background/80 backdrop-blur-sm border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col text-center items-center p-6">
                   <CardHeader>
                     {service.icon}
                     <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
