@@ -1,6 +1,7 @@
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from 'next/link';
+import { motion } from "framer-motion";
 
 const caseStudies = [
   {
@@ -32,21 +33,27 @@ export default function CaseStudiesPage() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {caseStudies.map((study, index) => (
-          <Card key={index} className="bg-transparent border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col">
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold">{study.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-grow">
-              <CardDescription>{study.description}</CardDescription>
-            </CardContent>
-            <CardFooter>
-              <Button asChild variant="link" className="p-0">
-                <Link href={study.link}>
-                  Read Full Story &rarr;
-                </Link>
-              </Button>
-            </CardFooter>
-          </Card>
+          <motion.div
+            key={index}
+            whileHover={{ y: -8, scale: 1.05 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+            <Card className="bg-background/80 backdrop-blur-sm shadow-xl transition-all duration-300 h-full flex flex-col">
+              <CardHeader>
+                <CardTitle className="text-xl font-semibold">{study.title}</CardTitle>
+              </CardHeader>
+              <CardContent className="flex-grow">
+                <CardDescription>{study.description}</CardDescription>
+              </CardContent>
+              <CardFooter>
+                <Button asChild variant="link" className="p-0">
+                  <Link href={study.link}>
+                    Read Full Story &rarr;
+                  </Link>
+                </Button>
+              </CardFooter>
+            </Card>
+          </motion.div>
         ))}
       </div>
     </div>
