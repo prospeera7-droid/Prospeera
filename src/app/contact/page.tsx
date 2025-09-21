@@ -13,7 +13,7 @@ export default function ContactPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        <Card className="bg-transparent border shadow-sm p-4 sm:p-6 lg:p-8">
+        <Card className="border shadow-sm p-4 sm:p-6 lg:p-8">
           <CardHeader>
             <CardTitle className="text-2xl">Send us a message</CardTitle>
           </CardHeader>
