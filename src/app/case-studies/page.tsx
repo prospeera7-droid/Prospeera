@@ -46,7 +46,7 @@ export default function CaseStudiesPage() {
             onClick={() => setExpandedIndex(index)}
             className="cursor-pointer"
           >
-            <Card className="bg-background/80 backdrop-blur-sm shadow-xl transition-all duration-300 h-full flex flex-col">
+            <Card className="bg-background/60 backdrop-blur-sm shadow-xl transition-all duration-300 h-full flex flex-col">
               <CardHeader>
                 <CardTitle className="text-xl font-semibold">{study.title}</CardTitle>
               </CardHeader>
@@ -75,7 +75,7 @@ export default function CaseStudiesPage() {
               layoutId={`card-${expandedIndex}`}
               className="w-full max-w-2xl mx-auto"
             >
-              <Card className="bg-background/80 backdrop-blur-sm shadow-2xl relative">
+              <Card className="bg-background/60 backdrop-blur-sm shadow-2xl relative">
                  <Button
                     variant="ghost"
                     size="icon"

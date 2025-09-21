@@ -67,7 +67,7 @@ export default function ServicesPage() {
             onClick={() => setExpandedIndex(index)}
             className="cursor-pointer"
           >
-            <Card className="bg-background/80 backdrop-blur-sm shadow-xl h-full flex flex-col">
+            <Card className="bg-background/60 backdrop-blur-sm shadow-xl h-full flex flex-col">
               <CardHeader className="flex flex-row items-center gap-4">
                 {service.icon}
                 <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
@@ -92,7 +92,7 @@ export default function ServicesPage() {
               layoutId={`card-${expandedIndex}`}
               className="w-full max-w-2xl mx-auto"
             >
-              <Card className="bg-background/80 backdrop-blur-sm shadow-2xl relative">
+              <Card className="bg-background/60 backdrop-blur-sm shadow-2xl relative">
                 <Button
                   variant="ghost"
                   size="icon"

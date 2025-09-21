@@ -98,7 +98,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-background/80 backdrop-blur-sm border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col text-center items-center p-6">
+              <Card key={index} className="bg-background/60 backdrop-blur-sm border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col text-center items-center p-6">
                 <CardHeader>
                   {service.icon}
                   <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
@@ -110,11 +110,11 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button asChild>
+            <Btn03 asChild>
                 <Link href="/services">
                     Explore all services
                 </Link>
-            </Button>
+            </Btn03>
           </div>
         </div>
       </section>

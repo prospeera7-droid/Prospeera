@@ -15,7 +15,7 @@ export type ProfileProps = {
 
 export function ProfileCard({ imageUrl, imageHint, name, title, followers }: ProfileProps) {
   return (
-    <div className="relative max-w-sm w-full bg-background/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-border">
+    <div className="relative max-w-sm w-full bg-background/60 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-border">
       <div className="absolute top-4 right-4 flex items-center gap-2">
         <div className="w-3 h-3 rounded-full bg-orange-400" />
         <div className="relative w-7 h-7">
@@ -48,13 +48,13 @@ export function ProfileCard({ imageUrl, imageHint, name, title, followers }: Pro
       <div className="flex justify-around mt-8 gap-4">
         <Button
           variant="outline"
-          className="w-full h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-accent"
+          className="w-full h-12 rounded-full bg-background/60 backdrop-blur-sm border-border hover:bg-accent"
         >
           <UserPlus className="w-5 h-5 text-muted-foreground" />
         </Button>
         <Button
           variant="outline"
-          className="w-full h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-accent"
+          className="w-full h-12 rounded-full bg-background/60 backdrop-blur-sm border-border hover:bg-accent"
         >
           <MessageCircle className="w-5 h-5 text-muted-foreground" />
         </Button>
