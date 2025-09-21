@@ -2,14 +2,12 @@
 
 import { cn } from "@/lib/utils"
 import { motion, useAnimate } from "framer-motion"
-import { Magnet } from "lucide-react"
 import { useEffect, useState, useCallback, forwardRef } from "react"
 import { Button, ButtonProps } from "@/components/ui/button"
 import { Slot } from "@radix-ui/react-slot"
 
 interface Btn03Props extends ButtonProps {
-  particleCount?: number
-  attractRadius?: number
+  particleCount?: number;
 }
 
 interface Particle {
@@ -19,12 +17,10 @@ interface Particle {
 }
 
 const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
-  ({ children, className, particleCount = 20, attractRadius = 50, asChild = false, ...props }, ref) => {
-    const [isAttracting, setIsAttracting] = useState(false)
+  ({ children, className, particleCount = 20, asChild = false, ...props }, ref) => {
+    const [isHovered, setIsHovered] = useState(false)
     const [particles, setParticles] = useState<Particle[]>([])
     const [scope, animate] = useAnimate()
-    
-    const Comp = asChild ? Slot : "button";
 
     useEffect(() => {
       const newParticles = Array.from({ length: particleCount }, (_, i) => ({
@@ -35,9 +31,9 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
       setParticles(newParticles)
     }, [particleCount])
 
-    const handleInteractionStart = useCallback(async () => {
-      setIsAttracting(true)
-      await animate("div", {
+    const handleInteractionStart = useCallback(() => {
+      setIsHovered(true)
+      animate("div", {
         x: 0,
         y: 0,
       },
@@ -48,9 +44,9 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
       })
     }, [animate])
 
-    const handleInteractionEnd = useCallback(async () => {
-      setIsAttracting(false)
-      await animate("div", (i) => ({
+    const handleInteractionEnd = useCallback(() => {
+      setIsHovered(false)
+      animate("div", (i) => ({
         x: particles[i]?.x,
         y: particles[i]?.y,
       }),
@@ -63,11 +59,11 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
 
     return (
       <Button
-        ref={ref}
+        ref={scope}
         asChild={asChild}
         className={cn(
           "relative touch-none overflow-hidden",
-          className,
+          className
         )}
         onMouseEnter={handleInteractionStart}
         onMouseLeave={handleInteractionEnd}
@@ -75,24 +71,24 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
         onTouchEnd={handleInteractionEnd}
         {...props}
       >
-        <Comp ref={scope as React.Ref<any>}>
-            {particles.map((_, index) => (
+        <>
+          {particles.map((particle, index) => (
             <motion.div
-                key={index}
-                custom={index}
-                initial={{ x: particles[index]?.x, y: particles[index]?.y, opacity: 0.4 }}
-                className={cn(
+              key={index}
+              custom={index}
+              initial={{ x: particle.x, y: particle.y }}
+              className={cn(
                 "absolute w-1.5 h-1.5 rounded-full",
                 "bg-primary-foreground/50",
                 "transition-opacity duration-300",
-                isAttracting ? "opacity-100" : "opacity-40",
-                )}
+                isHovered ? "opacity-100" : "opacity-40",
+              )}
             />
-            ))}
-            <span className="relative w-full flex items-center justify-center gap-2">
+          ))}
+          <span className="relative z-10 w-full flex items-center justify-center gap-2">
             {children}
-            </span>
-        </Comp>
+          </span>
+        </>
       </Button>
     )
   }
