@@ -17,28 +17,16 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollThreshold = pathname === '/' ? window.innerHeight * 0.9 : 10;
-      setIsScrolled(window.scrollY > scrollThreshold);
-    };
-
-    handleScroll();
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    setIsOpen(false);
   }, [pathname]);
 
   return (
     <header className={cn(
       "fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl transition-all duration-300 rounded-xl",
-      isScrolled || isOpen ? "bg-background/80 backdrop-blur-sm shadow-lg border border-border/50 bg-gradient-to-b from-border/20 to-transparent" : "bg-transparent border-transparent"
+      "bg-background/80 backdrop-blur-sm shadow-lg border border-border/50 bg-gradient-to-b from-border/20 to-transparent"
     )}>
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
