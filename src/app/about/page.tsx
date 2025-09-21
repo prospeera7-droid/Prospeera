@@ -13,7 +13,7 @@ export default function AboutUsPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <Card className="bg-transparent border shadow-sm hover:shadow-xl transition-shadow duration-300">
+        <Card className="bg-background/80 backdrop-blur-sm shadow-xl transition-shadow duration-300">
           <CardHeader className="items-center text-center">
             <Target className="h-10 w-10 mb-4 text-primary" />
             <CardTitle className="text-2xl font-semibold">Our Mission</CardTitle>
@@ -25,7 +25,7 @@ export default function AboutUsPage() {
           </CardContent>
         </Card>
 
-        <Card className="bg-transparent border shadow-sm hover:shadow-xl transition-shadow duration-300">
+        <Card className="bg-background/80 backdrop-blur-sm shadow-xl transition-shadow duration-300">
           <CardHeader className="items-center text-center">
             <Eye className="h-10 w-10 mb-4 text-primary" />
             <CardTitle className="text-2xl font-semibold">Our Vision</CardTitle>
