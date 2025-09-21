@@ -25,27 +25,69 @@ const services = [
   },
 ];
 
+const title = "Prospeera";
+const titleVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const letterVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeOut',
+    },
+  },
+};
+
 export default function Home() {
   return (
     <>
       <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
         <div className="max-w-4xl">
           <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: 'easeOut' }}
+            variants={titleVariants}
+            initial="hidden"
+            animate="visible"
             className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground"
           >
-            Prospeera
+            {title.split("").map((letter, index) => (
+              <motion.span
+                key={index}
+                variants={letterVariants}
+                className="inline-block"
+              >
+                {letter}
+              </motion.span>
+            ))}
           </motion.h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10">
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
+            className="text-xl md:text-2xl text-muted-foreground mb-10"
+          >
             Accounting & Financial Services for Freelancers.
-          </p>
-          <Button asChild size="lg" className="rounded-full">
-            <Link href="/contact">
-              Get Your Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
+          </motion.p>
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1, ease: 'easeOut' }}
+           >
+            <Button asChild size="lg" className="rounded-full">
+              <Link href="/contact">
+                Get Your Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
+              </Link>
+            </Button>
+          </motion.div>
         </div>
       </section>
 
