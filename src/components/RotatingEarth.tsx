@@ -9,11 +9,13 @@ interface RotatingEarthProps {
   className?: string
 }
 
+declare const topojson: any;
+
 export default function RotatingEarth({ width = 800, height = 600, className = "" }: RotatingEarthProps) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   
   useEffect(() => {
-    if (typeof window === 'undefined' || !canvasRef.current) return
+    if (typeof window === 'undefined' || !canvasRef.current || typeof topojson === 'undefined') return
 
     const canvas = canvasRef.current
     const context = canvas.getContext("2d")
@@ -41,6 +43,7 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
     let land: any;
     
     const render = () => {
+      if (!context) return;
       context.clearRect(0, 0, canvas.width, canvas.height);
       context.fillStyle = "hsl(var(--background))";
       context.fillRect(0, 0, canvas.width, canvas.height);
@@ -69,17 +72,21 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
     let frame: number;
     
     d3.json("https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json").then((world: any) => {
-        land = topojson.feature(world, world.objects.countries);
+        if (typeof topojson !== 'undefined') {
+          land = topojson.feature(world, world.objects.countries);
 
-        function animate() {
-            render();
-            frame = requestAnimationFrame(animate);
+          const animate = () => {
+              render();
+              frame = requestAnimationFrame(animate);
+          }
+          animate();
         }
-        animate();
     });
 
     return () => {
+      if (frame) {
         cancelAnimationFrame(frame);
+      }
     }
 
   }, [width, height]);
@@ -95,5 +102,3 @@ export default function RotatingEarth({ width = 800, height = 600, className = "
     </div>
   )
 }
-
-declare const topojson: any;
