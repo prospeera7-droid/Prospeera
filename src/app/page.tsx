@@ -75,7 +75,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
             className="text-xl md:text-2xl text-muted-foreground mb-10"
           >
-            Accounting & Financial Services for Freelancers.
+            Your Backdoor Financial Partner.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -98,7 +98,7 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-background/60 backdrop-blur-sm border shadow-sm hover:shadow-xl transition-shadow duration-300 flex flex-col text-center items-center p-6">
+              <Card key={index} className="bg-background/60 backdrop-blur-sm shadow-xl transition-shadow duration-300 flex flex-col text-center items-center p-6">
                 <CardHeader>
                   {service.icon}
                   <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
