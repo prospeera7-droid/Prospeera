@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calculator, FileText, PiggyBank } from 'lucide-react';
 import Link from 'next/link';
+import Sphere from '@/components/Sphere';
 
 const services = [
   {
@@ -25,16 +26,18 @@ const services = [
 export default function Home() {
   return (
     <div className="flex flex-col items-center">
-      <section className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 bg-background">
-        <div className="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem]"></div>
-        <div className="max-w-4xl">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-primary dark:text-primary-foreground">
+      <section className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 bg-black">
+        <div className="absolute inset-0 z-0">
+          <Sphere />
+        </div>
+        <div className="max-w-4xl z-10">
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-white">
             Prospeera
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-10">
+          <p className="text-xl md:text-2xl text-gray-300 mb-10">
             Accounting & Financial Services for Freelancers.
           </p>
-          <Button asChild size="lg" className="rounded-full">
+          <Button asChild size="lg" className="rounded-full bg-white text-black hover:bg-gray-200">
             <Link href="/contact">
               Get Your Free Consultation <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

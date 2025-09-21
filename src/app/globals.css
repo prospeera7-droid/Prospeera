@@ -86,3 +86,39 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Sphere styles */
+.sphere-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  perspective: 222px;
+}
+
+.sphere {
+  width: 333px;
+  height: 333px;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  animation: rot 16s linear infinite reverse;
+}
+
+.sphere i {
+  position: absolute;
+  width: 333px;
+  height: 333px;
+  line-height: 333px;
+  transform-style: preserve-3d;
+  border-radius: 50%;
+  backface-visibility: visible;
+  box-shadow: 0 0 83.25px 0 rgba(255, 255, 255, 0.1),
+    inset 0 0 83.25px 0 rgba(255, 255, 255, 0.2);
+}
+
+@keyframes rot {
+  to {
+    transform: rotateY(360deg) rotateZ(360deg);
+  }
+}
