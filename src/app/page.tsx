@@ -1,4 +1,3 @@
-
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -6,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calculator, FileText, PiggyBank } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { AnimatedButton } from '@/components/ui/AnimatedButton';
 
 const services = [
   {
@@ -110,11 +110,9 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Button asChild variant="outline" className="rounded-full">
-              <Link href="/services">
-                Explore All Services
-              </Link>
-            </Button>
+            <Link href="/services">
+              <AnimatedButton />
+            </Link>
           </div>
         </div>
       </section>
