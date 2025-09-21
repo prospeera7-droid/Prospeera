@@ -75,7 +75,7 @@ export default function CaseStudiesPage() {
               layoutId={`card-${expandedIndex}`}
               className="w-full max-w-2xl mx-auto"
             >
-              <Card className="bg-background shadow-2xl relative">
+              <Card className="bg-background/80 backdrop-blur-sm shadow-2xl relative">
                  <Button
                     variant="ghost"
                     size="icon"

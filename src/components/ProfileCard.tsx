@@ -15,12 +15,12 @@ export type ProfileProps = {
 
 export function ProfileCard({ imageUrl, imageHint, name, title, followers }: ProfileProps) {
   return (
-    <div className="relative max-w-sm w-full bg-white dark:bg-neutral-900 rounded-2xl shadow-xl p-8 border border-neutral-200/60 dark:border-neutral-800">
+    <div className="relative max-w-sm w-full bg-background/80 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-border">
       <div className="absolute top-4 right-4 flex items-center gap-2">
         <div className="w-3 h-3 rounded-full bg-orange-400" />
         <div className="relative w-7 h-7">
-            <Star className="w-7 h-7 text-white fill-blue-500" />
-            <Star className="w-4 h-4 text-white fill-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
+            <Star className="w-7 h-7 text-primary-foreground fill-blue-500" />
+            <Star className="w-4 h-4 text-primary-foreground fill-blue-500 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" />
         </div>
       </div>
       <div className="flex flex-col items-center">
@@ -34,9 +34,9 @@ export function ProfileCard({ imageUrl, imageHint, name, title, followers }: Pro
             className="object-cover"
           />
         </div>
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">{name}</h2>
-        <p className="text-neutral-500 dark:text-neutral-400">{title}</p>
-        <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-1">{followers}</p>
+        <h2 className="text-2xl font-bold">{name}</h2>
+        <p className="text-muted-foreground">{title}</p>
+        <p className="text-sm text-muted-foreground mt-1">{followers}</p>
         <Badge
           variant="outline"
           className="mt-4 bg-blue-100/50 dark:bg-blue-900/20 border-blue-200/80 dark:border-blue-800/50 text-blue-600 dark:text-blue-400 font-semibold text-sm"
@@ -48,15 +48,15 @@ export function ProfileCard({ imageUrl, imageHint, name, title, followers }: Pro
       <div className="flex justify-around mt-8 gap-4">
         <Button
           variant="outline"
-          className="w-full h-12 rounded-full bg-white dark:bg-neutral-800/50 border-neutral-200/80 dark:border-neutral-700/80 hover:bg-neutral-100/80 dark:hover:bg-neutral-800"
+          className="w-full h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-accent"
         >
-          <UserPlus className="w-5 h-5 text-neutral-600 dark:text-neutral-300" />
+          <UserPlus className="w-5 h-5 text-muted-foreground" />
         </Button>
         <Button
           variant="outline"
-          className="w-full h-12 rounded-full bg-white dark:bg-neutral-800/50 border-neutral-200/80 dark:border-neutral-700/80 hover:bg-neutral-100/80 dark:hover:bg-neutral-800"
+          className="w-full h-12 rounded-full bg-background/80 backdrop-blur-sm border-border hover:bg-accent"
         >
-          <MessageCircle className="w-5 h-5 text-neutral-600 dark:text-neutral-300" />
+          <MessageCircle className="w-5 h-5 text-muted-foreground" />
         </Button>
       </div>
     </div>

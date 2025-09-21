@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calculator, FileText, PiggyBank } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { AnimatedButton } from '@/components/ui/AnimatedButton';
+import Btn03 from '@/components/ui/Btn03';
 
 const services = [
   {
@@ -110,9 +110,11 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center mt-12">
-            <Link href="/services">
-              <AnimatedButton />
-            </Link>
+            <Button asChild>
+                <Link href="/services">
+                    Explore all services
+                </Link>
+            </Button>
           </div>
         </div>
       </section>
