@@ -1,7 +1,11 @@
+
+'use client';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calculator, FileText, PiggyBank } from 'lucide-react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 
 const services = [
   {
@@ -21,14 +25,19 @@ const services = [
   },
 ];
 
-export default async function Home() {
+export default function Home() {
   return (
     <>
       <section className="w-full min-h-screen flex flex-col items-center justify-center text-center px-4 relative">
         <div className="max-w-4xl">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: 'easeOut' }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground"
+          >
             Prospeera
-          </h1>
+          </motion.h1>
           <p className="text-xl md:text-2xl text-muted-foreground mb-10">
             Accounting & Financial Services for Freelancers.
           </p>
