@@ -17,6 +17,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 import { useState } from "react";
+import { AnimatedButton } from "@/components/ui/AnimatedButton";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -101,10 +102,10 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" className="w-full" disabled={isSubmitting}>
+        <AnimatedButton type="submit" className="w-full" disabled={isSubmitting}>
           {isSubmitting && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
           {isSubmitting ? 'Sending...' : 'Send Message'}
-        </Button>
+        </AnimatedButton>
       </form>
     </Form>
   );
