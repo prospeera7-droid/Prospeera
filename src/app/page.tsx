@@ -3,6 +3,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calculator, FileText, PiggyBank } from 'lucide-react';
 import Link from 'next/link';
+import { BackgroundPaths } from '@/components/BackgroundPaths';
 
 const services = [
   {
@@ -25,8 +26,9 @@ const services = [
 export default function Home() {
   return (
     <>
-      <section className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 bg-background">
-          <div className="max-w-4xl">
+      <section className="relative w-full h-screen flex flex-col items-center justify-center text-center px-4 bg-background overflow-hidden">
+          <BackgroundPaths />
+          <div className="relative z-10 max-w-4xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-6 text-foreground">
               Prospeera
             </h1>
