@@ -5,7 +5,15 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Star, MessageCircle, UserPlus, Circle } from "lucide-react"
 
-export function ProfileCard() {
+export type ProfileProps = {
+  imageUrl: string;
+  imageHint: string;
+  name: string;
+  title: string;
+  followers: string;
+};
+
+export function ProfileCard({ imageUrl, imageHint, name, title, followers }: ProfileProps) {
   return (
     <div className="relative max-w-sm w-full bg-white dark:bg-neutral-900 rounded-2xl shadow-xl p-8 border border-neutral-200/60 dark:border-neutral-800">
       <div className="absolute top-4 right-4 flex items-center gap-2">
@@ -18,17 +26,17 @@ export function ProfileCard() {
       <div className="flex flex-col items-center">
         <div className="relative w-28 h-28 rounded-full overflow-hidden mb-4 shadow-lg">
           <Image
-            src="https://picsum.photos/seed/emily/200/200"
-            alt="Emily Wilson"
+            src={imageUrl}
+            alt={name}
             width={112}
             height={112}
-            data-ai-hint="woman portrait"
+            data-ai-hint={imageHint}
             className="object-cover"
           />
         </div>
-        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">Emily Wilson</h2>
-        <p className="text-neutral-500 dark:text-neutral-400">Product Manager</p>
-        <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-1">2,100 followers</p>
+        <h2 className="text-2xl font-bold text-neutral-900 dark:text-neutral-100">{name}</h2>
+        <p className="text-neutral-500 dark:text-neutral-400">{title}</p>
+        <p className="text-sm text-neutral-400 dark:text-neutral-500 mt-1">{followers}</p>
         <Badge
           variant="outline"
           className="mt-4 bg-blue-100/50 dark:bg-blue-900/20 border-blue-200/80 dark:border-blue-800/50 text-blue-600 dark:text-blue-400 font-semibold text-sm"
