@@ -12,7 +12,7 @@ const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
   { href: '/case-studies', label: 'Case Studies' },
-  { href: '/contact', label: 'Contact Us' },
+  { href: '/contact', label: 'Contact' },
 ];
 
 export function Header() {
