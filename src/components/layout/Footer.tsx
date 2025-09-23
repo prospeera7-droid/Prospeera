@@ -12,6 +12,15 @@ const navLinks = [
   { href: '/contact', label: 'Contact Us' },
 ];
 
+const serviceLinks = [
+    { href: '/services', label: 'Bookkeeping & Accounting' },
+    { href: '/services', label: 'Tax Planning & Preparation' },
+    { href: '/services', label: 'Financial Advisory' },
+    { href: '/services', label: 'Business Formation' },
+    { href: '/services', label: 'Financial Reporting' },
+    { href: '/services', label: 'IRS Representation' },
+]
+
 export function Footer() {
 
   const scrollToTop = () => {
@@ -35,12 +44,24 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="md:col-span-2 grid grid-cols-2 gap-8">
+          <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-semibold tracking-wider uppercase">Navigation</h3>
               <ul className="mt-4 space-y-2">
                 {navLinks.map(({ href, label }) => (
                   <li key={href}>
+                    <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+             <div>
+              <h3 className="font-semibold tracking-wider uppercase">Services</h3>
+              <ul className="mt-4 space-y-2">
+                {serviceLinks.map(({ href, label }) => (
+                  <li key={label}>
                     <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {label}
                     </Link>
