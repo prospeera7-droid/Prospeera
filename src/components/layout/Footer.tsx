@@ -24,8 +24,10 @@ const serviceLinks = [
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
+    setIsMounted(true);
     setYear(new Date().getFullYear());
   }, []);
 
@@ -101,7 +103,7 @@ export function Footer() {
         
         <div className="mt-12 border-t pt-8">
           <p className="text-sm text-muted-foreground text-center">
-            © {year} Prospeera. All rights reserved.
+            {isMounted && `© ${year} Prospeera. All rights reserved.`}
           </p>
         </div>
 
