@@ -4,24 +4,10 @@
  * @fileOverview A flow for scheduling a meeting.
  *
  * - scheduleMeeting - A function that handles the meeting scheduling process.
- * - ScheduleMeetingInput - The input type for the scheduleMeeting function.
- * - ScheduleMeetingOutput - The return type for the scheduleMeeting function.
  */
 
 import {ai} from '@/ai/genkit';
-import {z} from 'genkit';
-
-export const ScheduleMeetingInputSchema = z.object({
-  name: z.string().describe('The name of the person requesting the meeting.'),
-  email: z.string().email().describe('The email address of the person.'),
-  message: z.string().describe('The message or reason for the meeting.'),
-});
-export type ScheduleMeetingInput = z.infer<typeof ScheduleMeetingInputSchema>;
-
-export const ScheduleMeetingOutputSchema = z.object({
-    confirmationMessage: z.string().describe("A confirmation message indicating the meeting has been scheduled.")
-});
-export type ScheduleMeetingOutput = z.infer<typeof ScheduleMeetingOutputSchema>;
+import { ScheduleMeetingInput, ScheduleMeetingOutput, ScheduleMeetingInputSchema, ScheduleMeetingOutputSchema } from '@/ai/schemas/scheduleMeetingSchemas';
 
 
 export async function scheduleMeeting(input: ScheduleMeetingInput): Promise<ScheduleMeetingOutput> {

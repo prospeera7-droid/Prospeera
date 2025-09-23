@@ -17,7 +17,8 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
-import { scheduleMeeting, ScheduleMeetingInput, ScheduleMeetingInputSchema } from "@/ai/flows/scheduleMeetingFlow";
+import { scheduleMeeting } from "@/ai/flows/scheduleMeetingFlow";
+import { ScheduleMeetingInput, ScheduleMeetingInputSchema } from "@/ai/schemas/scheduleMeetingSchemas";
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
