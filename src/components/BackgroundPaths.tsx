@@ -46,7 +46,7 @@ function FloatingPaths({ position }: { position: number }) {
 
 export function BackgroundPaths() {
   return (
-    <div className="fixed inset-0 text-foreground/20">
+    <div className="fixed inset-0 text-sky-500/30">
       <FloatingPaths position={1} />
       <FloatingPaths position={-1} />
     </div>
