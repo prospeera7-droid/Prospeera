@@ -82,18 +82,19 @@ export function Footer() {
         </div>
         
         <div className="mt-12 border-t pt-8 flex justify-between items-center">
-           <div className="text-left">
-              <span className="text-4xl font-bold block">Prospeera</span>
+            <div className="text-left">
+                <span className="text-2xl font-bold">Prospeera</span>
             </div>
-            <div className="text-center">
-                <span className="text-4xl font-bold block">Means</span>
-                <span className="text-4xl font-bold block">Progress</span>
+            <div className="flex items-center gap-8">
+                <div className="text-right">
+                    <span className="text-4xl font-bold block">Prospeera</span>
+                    <span className="text-4xl font-bold block">Means</span>
+                    <span className="text-4xl font-bold block">Progress</span>
+                </div>
+                <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
+                    <MoveUp className="h-5 w-5" />
+                </Button>
             </div>
-          <div className="text-right flex items-center gap-4">
-            <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
-              <MoveUp className="h-5 w-5" />
-            </Button>
-          </div>
         </div>
 
         <div className="mt-12 border-t pt-8">
