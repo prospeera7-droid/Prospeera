@@ -38,7 +38,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="md:col-span-2 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-semibold tracking-wider uppercase">Navigation</h3>
               <ul className="mt-4 space-y-2">
@@ -79,18 +79,23 @@ export function Footer() {
             </div>
           </div>
           
-          <div className="md:col-span-1 flex md:justify-end items-center gap-4">
-            <div className="text-right">
+        </div>
+        
+        <div className="mt-12 border-t pt-8 flex justify-between items-center">
+           <div className="text-left">
               <span className="text-4xl font-bold block">Prospeera</span>
-              <span className="text-4xl font-bold block">Means</span>
-              <span className="text-4xl font-bold block">Progress</span>
             </div>
+            <div className="text-center">
+                <span className="text-4xl font-bold block">Means</span>
+                <span className="text-4xl font-bold block">Progress</span>
+            </div>
+          <div className="text-right flex items-center gap-4">
             <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
               <MoveUp className="h-5 w-5" />
             </Button>
           </div>
         </div>
-        
+
         <div className="mt-12 border-t pt-8">
           <p className="text-sm text-muted-foreground text-center">
             {isMounted && `© ${year} Prospeera. All rights reserved.`}
