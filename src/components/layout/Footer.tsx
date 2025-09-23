@@ -38,7 +38,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="md:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <h3 className="font-semibold tracking-wider uppercase">Navigation</h3>
               <ul className="mt-4 space-y-2">
@@ -63,7 +63,7 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="flex flex-col justify-between">
+            <div className="flex items-start gap-8">
                 <div>
                     <h3 className="font-semibold tracking-wider uppercase">Follow Us</h3>
                     <div className="mt-4 flex space-x-4">
@@ -78,7 +78,7 @@ export function Footer() {
                         </Link>
                     </div>
                 </div>
-                <div className="text-right">
+                <div className="text-left">
                     <span className="text-4xl font-bold block">Prospeera</span>
                     <span className="text-4xl font-bold block">Means</span>
                     <span className="text-4xl font-bold block">Progress</span>
