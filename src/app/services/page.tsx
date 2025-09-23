@@ -7,6 +7,7 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from '@/components/ui/button';
 import { Calculator, FileText, PiggyBank, Briefcase, BarChart, ShieldCheck, X, ArrowRight } from 'lucide-react';
 import Link from 'next/link';
+import Btn03 from '@/components/ui/Btn03';
 
 const allServices = [
   {
@@ -68,8 +69,11 @@ export default function ServicesPage() {
             transition={{ type: 'spring', stiffness: 300 }}
             className="flex flex-col"
           >
-            <Card className="bg-background/60 backdrop-blur-sm shadow-xl h-full flex flex-col">
-              <div  onClick={() => setExpandedIndex(index)} className="cursor-pointer flex-grow">
+            <Card
+              onClick={() => setExpandedIndex(index)}
+              className="bg-background/60 backdrop-blur-sm shadow-xl h-full flex flex-col cursor-pointer"
+            >
+              <div className="flex-grow">
                 <CardHeader className="flex flex-row items-center gap-4">
                   {service.icon}
                   <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
@@ -78,16 +82,17 @@ export default function ServicesPage() {
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
               </div>
-              <CardFooter>
-                 <Button asChild className="w-full">
-                    <Link href="/contact">
-                        Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                </Button>
-              </CardFooter>
             </Card>
           </motion.div>
         ))}
+      </div>
+
+      <div className="text-center mt-16">
+        <Btn03 asChild size="lg">
+          <Link href="/contact">
+            Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Btn03>
       </div>
 
       <AnimatePresence>
@@ -97,12 +102,14 @@ export default function ServicesPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            onClick={() => setExpandedIndex(null)}
           >
             <motion.div
               layoutId={`card-${expandedIndex}`}
               className="w-full max-w-2xl mx-auto"
+              onClick={(e) => e.stopPropagation()}
             >
-              <Card className="bg-background/60 backdrop-blur-sm shadow-2xl relative">
+              <Card className="bg-background shadow-2xl relative">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -114,10 +121,14 @@ export default function ServicesPage() {
                 </Button>
                 <CardHeader>
                   <CardTitle className="text-2xl font-bold">{allServices[expandedIndex].title}</CardTitle>
-                  <CardDescription>{allServices[expandedIndex].description}</CardDescription>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{allServices[expandedIndex].fullDescription}</p>
+                  <Button asChild className="mt-6 w-full">
+                    <Link href="/contact">
+                        Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>
