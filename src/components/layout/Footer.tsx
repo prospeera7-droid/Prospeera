@@ -8,20 +8,21 @@ import { useEffect, useState } from 'react';
 import { navLinks, serviceLinks } from '@/lib/links';
 import { motion } from 'framer-motion';
 
+const slogan = "Prospeera Means Progress";
+
 const sloganContainerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.8, // Time between each child animation
+      staggerChildren: 0.08,
       repeat: Infinity,
-      repeatType: "loop",
-      repeatDelay: 2, // Wait 2 seconds before repeating the whole sequence
+      repeatDelay: 2,
     },
   },
 };
 
-const sloganWordVariants = {
+const letterVariants = {
   hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
@@ -33,6 +34,7 @@ const sloganWordVariants = {
     },
   },
 };
+
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -90,37 +92,42 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div className="flex items-start gap-8">
-                <div>
-                    <h3 className="font-semibold tracking-wider uppercase">Follow Us</h3>
-                    <div className="mt-4 flex space-x-4">
-                        <Link href="#" aria-label="Twitter">
-                        <Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                        </Link>
-                        <Link href="#" aria-label="LinkedIn">
-                        <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                        </Link>
-                        <Link href="#" aria-label="GitHub">
-                        <Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                        </Link>
-                    </div>
+            <div className="flex flex-col gap-4">
+              <div>
+                <h3 className="font-semibold tracking-wider uppercase">Follow Us</h3>
+                <div className="mt-4 flex space-x-4">
+                    <Link href="#" aria-label="Twitter">
+                    <Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                    </Link>
+                    <Link href="#" aria-label="LinkedIn">
+                    <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                    </Link>
+                    <Link href="#" aria-label="GitHub">
+                    <Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                    </Link>
                 </div>
-                <motion.div
-                  className="text-left"
+              </div>
+              <motion.h3
+                  className="text-4xl font-bold"
                   variants={sloganContainerVariants}
                   initial="hidden"
                   animate="visible"
-                >
-                  <motion.span variants={sloganWordVariants} className="text-4xl font-bold block">
-                    Prospeera
-                  </motion.span>
-                  <motion.span variants={sloganWordVariants} className="text-4xl font-bold block">
-                    Means
-                  </motion.span>
-                  <motion.span variants={sloganWordVariants} className="text-4xl font-bold block">
-                    Progress
-                  </motion.span>
-                </motion.div>
+                  aria-label={slogan}
+              >
+                {slogan.split(" ").map((word, wordIndex) => (
+                  <span key={wordIndex} className="inline-block mr-4">
+                    {word.split("").map((letter, letterIndex) => (
+                      <motion.span
+                        key={letterIndex}
+                        variants={letterVariants}
+                        className="inline-block"
+                      >
+                        {letter}
+                      </motion.span>
+                    ))}
+                  </span>
+                ))}
+              </motion.h3>
             </div>
           </div>
           
