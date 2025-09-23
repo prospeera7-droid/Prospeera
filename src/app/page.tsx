@@ -1,3 +1,4 @@
+
 'use client';
 
 import { Button } from '@/components/ui/button';
@@ -9,17 +10,17 @@ import Btn03 from '@/components/ui/Btn03';
 
 const services = [
   {
-    icon: <Calculator className="w-8 h-8 mb-4" />,
+    icon: <Calculator className="w-8 h-8" />,
     title: 'Bookkeeping & Accounting',
     description: 'We handle your books so you can focus on your craft. Meticulous, accurate, and always on time.',
   },
   {
-    icon: <FileText className="w-8 h-8 mb-4" />,
+    icon: <FileText className="w-8 h-8" />,
     title: 'Tax Planning & Preparation',
     description: 'Navigate tax season with ease. We specialize in tax strategies for freelancers to maximize your returns.',
   },
   {
-    icon: <PiggyBank className="w-8 h-8 mb-4" />,
+    icon: <PiggyBank className="w-8 h-8" />,
     title: 'Financial Advisory',
     description: 'Plan for your future with expert advice on savings, investments, and retirement for the self-employed.',
   },
@@ -98,12 +99,12 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <Card key={index} className="bg-background/60 backdrop-blur-sm shadow-xl transition-shadow duration-300 flex flex-col text-center items-center p-6">
-                <CardHeader>
+              <Card key={index} className="bg-background/10 backdrop-blur-sm shadow-xl transition-shadow duration-300 flex flex-col p-6">
+                <CardHeader className="flex flex-row items-center gap-4">
                   {service.icon}
                   <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
+                <CardContent className="flex-grow">
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
               </Card>
