@@ -34,7 +34,7 @@ export function Footer() {
               Prospeera
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
-              Financial clarity for freelancers.
+              Your Backdoor Financial Partner.
             </p>
           </div>
 
@@ -102,7 +102,7 @@ export function Footer() {
         </div>
       </div>
       <div className="w-full text-center py-4">
-        <span className="text-[16rem] font-black text-foreground/5 leading-none select-none tracking-tighter">
+        <span className="font-sketch text-[16rem] font-black text-foreground/5 leading-none select-none tracking-tighter">
             PROSPEERA
         </span>
       </div>
