@@ -6,6 +6,7 @@ import { Twitter, Linkedin, Github, MoveUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { navLinks, serviceLinks } from '@/lib/links';
+import { motion } from 'framer-motion';
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -78,11 +79,15 @@ export function Footer() {
                         </Link>
                     </div>
                 </div>
-                <div className="text-left">
+                <motion.div
+                  animate={{ scale: [1, 1.02, 1] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+                  className="text-left"
+                >
                     <span className="text-4xl font-bold block">Prospeera</span>
                     <span className="text-4xl font-bold block">Means</span>
                     <span className="text-4xl font-bold block">Progress</span>
-                </div>
+                </motion.div>
             </div>
           </div>
           
