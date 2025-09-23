@@ -38,12 +38,6 @@ export function ProfileCard({ imageUrl, imageHint, name, title, followers }: Pro
         <h2 className="text-2xl font-bold">{name}</h2>
         <p className="text-muted-foreground">{title}</p>
         <p className="text-sm text-muted-foreground mt-1">{followers}</p>
-        <Badge
-          variant="outline"
-          className="mt-4 bg-blue-100/50 dark:bg-blue-900/20 border-blue-200/80 dark:border-blue-800/50 text-blue-600 dark:text-blue-400 font-semibold text-sm"
-        >
-          Premium
-        </Badge>
       </div>
 
       <div className="flex justify-around mt-8 gap-4">
