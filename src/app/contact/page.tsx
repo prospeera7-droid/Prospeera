@@ -13,7 +13,7 @@ export default function ContactPage() {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16">
-        <Card className="bg-background/60 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105 p-4 sm:p-6 lg:p-8">
+        <Card className="bg-background/30 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105 p-4 sm:p-6 lg:p-8">
           <CardHeader>
             <CardTitle className="text-2xl">Send us a message</CardTitle>
           </CardHeader>
@@ -23,7 +23,7 @@ export default function ContactPage() {
         </Card>
 
         <div className="space-y-8">
-          <Card className="bg-background/60 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105">
+          <Card className="bg-background/30 backdrop-blur-sm shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl hover:scale-105">
             <CardHeader>
               <CardTitle className="text-xl">Contact Information</CardTitle>
             </CardHeader>
