@@ -1,3 +1,4 @@
+
 import type {Config} from 'tailwindcss';
 
 export default {
@@ -13,7 +14,6 @@ export default {
         body: ['var(--font-source-code-pro)', 'monospace'],
         headline: ['var(--font-source-code-pro)', 'monospace'],
         code: ['var(--font-source-code-pro)', 'monospace'],
-        sketch: ['var(--font-permanent-marker)', 'cursive'],
       },
       colors: {
         background: 'hsl(var(--background))',
