@@ -78,7 +78,8 @@ export function Footer() {
             </div>
           </div>
           
-          <div className="md:col-span-1 flex md:justify-end items-start">
+          <div className="md:col-span-1 flex md:justify-end items-center gap-4">
+             <p className="text-lg font-semibold text-muted-foreground">Prospeera Means Progress</p>
             <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
               <MoveUp className="h-5 w-5" />
             </Button>
