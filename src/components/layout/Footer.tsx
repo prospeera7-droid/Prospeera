@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -79,7 +80,11 @@ export function Footer() {
           </div>
           
           <div className="md:col-span-1 flex md:justify-end items-center gap-4">
-             <p className="text-lg font-semibold text-muted-foreground">Prospeera Means Progress</p>
+            <div className="text-right">
+              <span className="text-2xl font-bold block">Prospeera</span>
+              <span className="text-2xl font-bold block">Means</span>
+              <span className="text-2xl font-bold block">Progress</span>
+            </div>
             <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
               <MoveUp className="h-5 w-5" />
             </Button>
