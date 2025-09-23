@@ -16,7 +16,7 @@ export type ProfileProps = {
 
 export function ProfileCard({ imageUrl, imageHint, name, title, followers }: ProfileProps) {
   return (
-    <div className="relative max-w-sm w-full bg-background/10 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-border">
+    <div className="relative max-w-sm w-full bg-background/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-border">
       <div className="absolute top-4 right-4 flex items-center gap-2">
         <div className="w-3 h-3 rounded-full bg-orange-400" />
         <div className="relative w-7 h-7">

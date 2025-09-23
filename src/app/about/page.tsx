@@ -44,7 +44,7 @@ export default function AboutUsPage() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-            <Card className="bg-background/10 backdrop-blur-sm shadow-xl h-full">
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
               <CardHeader className="items-center text-center">
                 <Target className="h-10 w-10 mb-4 text-primary" />
                 <CardTitle className="text-2xl font-semibold">Our Mission</CardTitle>
@@ -58,7 +58,7 @@ export default function AboutUsPage() {
           </motion.div>
 
           <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-            <Card className="bg-background/10 backdrop-blur-sm shadow-xl h-full">
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
               <CardHeader className="items-center text-center">
                 <Eye className="h-10 w-10 mb-4 text-primary" />
                 <CardTitle className="text-2xl font-semibold">Our Vision</CardTitle>
