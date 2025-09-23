@@ -17,14 +17,21 @@ import { useToast } from "@/hooks/use-toast";
 import { Loader2, Send } from "lucide-react";
 import { useState } from "react";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
-import { scheduleMeeting } from "@/ai/flows/scheduleMeetingFlow";
-import { ScheduleMeetingInput, ScheduleMeetingInputSchema } from "@/ai/schemas/scheduleMeetingSchemas";
+import { z } from "zod";
+
+const ContactFormSchema = z.object({
+  name: z.string().min(2, { message: "Name must be at least 2 characters." }),
+  email: z.string().email({ message: "Please enter a valid email address." }),
+  message: z.string().min(10, { message: "Message must be at least 10 characters." }),
+});
+
+type ContactFormValues = z.infer<typeof ContactFormSchema>;
 
 export function ContactForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const form = useForm<ScheduleMeetingInput>({
-    resolver: zodResolver(ScheduleMeetingInputSchema),
+  const form = useForm<ContactFormValues>({
+    resolver: zodResolver(ContactFormSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -32,17 +39,18 @@ export function ContactForm() {
     },
   });
 
-  async function onSubmit(values: ScheduleMeetingInput) {
+  async function onSubmit(values: ContactFormValues) {
     setIsSubmitting(true);
+    // Simulate an API call
+    await new Promise(resolve => setTimeout(resolve, 1000));
     try {
-      const result = await scheduleMeeting(values);
       toast({
         title: "Message Sent!",
-        description: result.confirmationMessage,
+        description: "Thank you for your message. We'll get back to you shortly.",
       });
       form.reset();
     } catch (error) {
-      console.error("Error scheduling meeting:", error);
+      console.error("Error sending message:", error);
       toast({
         title: "Uh oh! Something went wrong.",
         description: "There was a problem with your request. Please try again.",
