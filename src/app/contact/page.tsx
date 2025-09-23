@@ -1,3 +1,6 @@
+
+'use client';
+
 import { ContactForm } from "@/components/ContactForm";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Mail, Phone, MapPin, CalendarDays, ArrowRight } from "lucide-react";
@@ -18,7 +21,7 @@ export default function ContactPage() {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
         {/* Card 1: Send a Message */}
         <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
-          <Card className="h-full bg-background/20 backdrop-blur-sm shadow-xl transition-all duration-300">
+          <Card className="h-full bg-background/10 backdrop-blur-sm shadow-xl transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-2xl">Send a Message</CardTitle>
               <CardDescription>We'll get back to you shortly.</CardDescription>
@@ -31,7 +34,7 @@ export default function ContactPage() {
 
         {/* Card 2: Contact Information */}
         <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
-          <Card className="h-full bg-background/20 backdrop-blur-sm shadow-xl transition-all duration-300">
+          <Card className="h-full bg-background/10 backdrop-blur-sm shadow-xl transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-2xl">Contact Information</CardTitle>
               <CardDescription>Direct contact details.</CardDescription>
