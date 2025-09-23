@@ -8,34 +8,6 @@ import { useEffect, useState } from 'react';
 import { navLinks, serviceLinks } from '@/lib/links';
 import { motion } from 'framer-motion';
 
-const slogan = "Prospeera Means Progress";
-
-const sloganContainerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.08,
-      repeat: Infinity,
-      repeatDelay: 2,
-    },
-  },
-};
-
-const letterVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: 'spring',
-      stiffness: 100,
-      damping: 12,
-    },
-  },
-};
-
-
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [isMounted, setIsMounted] = useState(false);
@@ -107,27 +79,9 @@ export function Footer() {
                     </Link>
                 </div>
               </div>
-              <motion.h3
-                  className="text-4xl font-bold"
-                  variants={sloganContainerVariants}
-                  initial="hidden"
-                  animate="visible"
-                  aria-label={slogan}
-              >
-                {slogan.split(" ").map((word, wordIndex) => (
-                  <span key={wordIndex} className="inline-block mr-4">
-                    {word.split("").map((letter, letterIndex) => (
-                      <motion.span
-                        key={letterIndex}
-                        variants={letterVariants}
-                        className="inline-block"
-                      >
-                        {letter}
-                      </motion.span>
-                    ))}
-                  </span>
-                ))}
-              </motion.h3>
+              <h3 className="text-4xl font-bold">
+                Prospeera Means Progress
+              </h3>
             </div>
           </div>
           
