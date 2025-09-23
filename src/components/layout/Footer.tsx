@@ -1,26 +1,10 @@
-
 'use client';
 
 import Link from 'next/link';
 import { Twitter, Linkedin, Github, MoveUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
-
-const navLinks = [
-  { href: '/about', label: 'About Us' },
-  { href: '/services', label: 'Services' },
-  { href: '/case-studies', label: 'Case Studies' },
-  { href: '/contact', label: 'Contact Us' },
-];
-
-const serviceLinks = [
-    { href: '/services', label: 'Bookkeeping & Accounting' },
-    { href: '/services', label: 'Tax Planning & Preparation' },
-    { href: '/services', label: 'Financial Advisory' },
-    { href: '/services', label: 'Business Formation' },
-    { href: '/services', label: 'Financial Reporting' },
-    { href: '/services', label: 'IRS Representation' },
-]
+import { navLinks, serviceLinks } from '@/lib/links';
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
