@@ -88,7 +88,7 @@ export default function ServicesPage() {
       </div>
 
       <div className="text-center mt-16">
-        <Btn03 asChild size="lg">
+        <Btn03 asChild size="lg" className="rounded-full">
           <Link href="/contact">
             Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
@@ -124,7 +124,7 @@ export default function ServicesPage() {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">{allServices[expandedIndex].fullDescription}</p>
-                  <Button asChild className="mt-6 w-full">
+                  <Button asChild className="mt-6 w-full rounded-full">
                     <Link href="/contact">
                         Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
