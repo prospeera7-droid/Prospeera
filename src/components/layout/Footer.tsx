@@ -4,6 +4,7 @@
 import Link from 'next/link';
 import { Twitter, Linkedin, Github, MoveUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useEffect, useState } from 'react';
 
 const navLinks = [
   { href: '/about', label: 'About Us' },
@@ -22,6 +23,12 @@ const serviceLinks = [
 ]
 
 export function Footer() {
+  const [year, setYear] = useState(new Date().getFullYear());
+
+  useEffect(() => {
+    setYear(new Date().getFullYear());
+  }, []);
+
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -94,7 +101,7 @@ export function Footer() {
         
         <div className="mt-12 border-t pt-8">
           <p className="text-sm text-muted-foreground text-center">
-            © {new Date().getFullYear()} Prospeera. All rights reserved.
+            © {year} Prospeera. All rights reserved.
           </p>
         </div>
 
