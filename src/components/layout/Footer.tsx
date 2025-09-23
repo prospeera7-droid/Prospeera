@@ -60,8 +60,8 @@ export function Footer() {
              <div>
               <h3 className="font-semibold tracking-wider uppercase">Services</h3>
               <ul className="mt-4 space-y-2">
-                {serviceLinks.map(({ label }) => (
-                  <li key={label}>
+                {serviceLinks.map(({ label }, index) => (
+                  <li key={`${label}-${index}`}>
                     <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {label}
                     </Link>
