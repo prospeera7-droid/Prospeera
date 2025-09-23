@@ -2,7 +2,7 @@
 'use client';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ArrowRight, Calculator, FileText, PiggyBank } from 'lucide-react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
@@ -107,6 +107,13 @@ export default function Home() {
                 <CardContent className="flex-grow">
                   <p className="text-muted-foreground">{service.description}</p>
                 </CardContent>
+                <CardFooter>
+                  <Button asChild variant="link" className="p-0">
+                    <Link href="/services">
+                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                  </Button>
+                </CardFooter>
               </Card>
             ))}
           </div>
