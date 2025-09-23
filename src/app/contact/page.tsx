@@ -18,10 +18,14 @@ export default function ContactPage() {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {/* Card 1: Send a Message */}
-        <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
-          <Card className="h-full bg-background/10 backdrop-blur-sm shadow-xl transition-all duration-300">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 max-w-7xl mx-auto">
+        {/* Left Column: Contact Form */}
+        <motion.div
+          className="lg:col-span-3"
+          whileHover={{ y: -8 }}
+          transition={{ type: "spring", stiffness: 300 }}
+        >
+          <Card className="h-full bg-background/20 backdrop-blur-sm shadow-xl transition-all duration-300">
             <CardHeader>
               <CardTitle className="text-2xl">Send a Message</CardTitle>
               <CardDescription>We'll get back to you shortly.</CardDescription>
@@ -32,47 +36,50 @@ export default function ContactPage() {
           </Card>
         </motion.div>
 
-        {/* Card 2: Contact Information */}
-        <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
-          <Card className="h-full bg-background/10 backdrop-blur-sm shadow-xl transition-all duration-300">
-            <CardHeader>
-              <CardTitle className="text-2xl">Contact Information</CardTitle>
-              <CardDescription>Direct contact details.</CardDescription>
-            </CardHeader>
-            <CardContent className="space-y-6 pt-2">
-              <div className="flex items-center gap-4">
-                <Mail className="h-6 w-6 text-muted-foreground" />
-                <a href="mailto:hello@prospeera.com" className="hover:underline">hello@prospeera.com</a>
-              </div>
-              <div className="flex items-center gap-4">
-                <Phone className="h-6 w-6 text-muted-foreground" />
-                <span>(555) 123-4567</span>
-              </div>
-              <div className="flex items-center gap-4">
-                <MapPin className="h-6 w-6 text-muted-foreground" />
-                <span>123 Finance St, Moneyville, USA</span>
-              </div>
-            </CardContent>
-          </Card>
-        </motion.div>
+        {/* Right Column: Contact Info & Schedule Meeting */}
+        <div className="lg:col-span-2 flex flex-col gap-8">
+          {/* Contact Information Card */}
+          <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
+            <Card className="h-full bg-background/20 backdrop-blur-sm shadow-xl transition-all duration-300">
+              <CardHeader>
+                <CardTitle className="text-2xl">Contact Information</CardTitle>
+                <CardDescription>Direct contact details.</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6 pt-2">
+                <div className="flex items-center gap-4">
+                  <Mail className="h-6 w-6 text-muted-foreground" />
+                  <a href="mailto:hello@prospeera.com" className="hover:underline">hello@prospeera.com</a>
+                </div>
+                <div className="flex items-center gap-4">
+                  <Phone className="h-6 w-6 text-muted-foreground" />
+                  <span>(555) 123-4567</span>
+                </div>
+                <div className="flex items-center gap-4">
+                  <MapPin className="h-6 w-6 text-muted-foreground" />
+                  <span>123 Finance St, Moneyville, USA</span>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
 
-        {/* Card 3: Schedule a Meeting */}
-        <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
-          <Card className="h-full bg-background/20 backdrop-blur-sm shadow-xl transition-all duration-300 flex flex-col justify-between">
-            <CardHeader>
-              <CardTitle className="text-2xl">Schedule a Meeting</CardTitle>
-              <CardDescription>Book a free consultation call with our experts at your convenience.</CardDescription>
-            </CardHeader>
-            <CardContent className="flex flex-col items-center justify-center text-center">
-               <CalendarDays className="h-16 w-16 text-primary mb-6" />
-               <Button asChild size="lg" className="w-full rounded-full">
-                <Link href="#">
-                  Book Now <ArrowRight className="ml-2 h-5 w-5" />
-                </Link>
-              </Button>
-            </CardContent>
-          </Card>
-        </motion.div>
+          {/* Schedule a Meeting Card */}
+          <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
+            <Card className="h-full bg-background/20 backdrop-blur-sm shadow-xl transition-all duration-300 flex flex-col justify-between">
+              <CardHeader>
+                <CardTitle className="text-2xl">Schedule a Meeting</CardTitle>
+                <CardDescription>Book a free consultation call with our experts at your convenience.</CardDescription>
+              </CardHeader>
+              <CardContent className="flex flex-col items-center justify-center text-center">
+                 <CalendarDays className="h-16 w-16 text-primary mb-6" />
+                 <Button asChild size="lg" className="w-full rounded-full">
+                  <Link href="#">
+                    Book Now <ArrowRight className="ml-2 h-5 w-5" />
+                  </Link>
+                </Button>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
       </div>
     </div>
   );
