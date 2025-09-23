@@ -81,9 +81,9 @@ export function Footer() {
           
           <div className="md:col-span-1 flex md:justify-end items-center gap-4">
             <div className="text-right">
-              <span className="text-2xl font-bold block">Prospeera</span>
-              <span className="text-2xl font-bold block">Means</span>
-              <span className="text-2xl font-bold block">Progress</span>
+              <span className="text-4xl font-bold block">Prospeera</span>
+              <span className="text-4xl font-bold block">Means</span>
+              <span className="text-4xl font-bold block">Progress</span>
             </div>
             <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
               <MoveUp className="h-5 w-5" />
