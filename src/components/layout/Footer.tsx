@@ -31,7 +31,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t bg-background/80 backdrop-blur-sm">
+    <footer className="border-t bg-background/30 backdrop-blur-lg">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
@@ -60,9 +60,9 @@ export function Footer() {
              <div>
               <h3 className="font-semibold tracking-wider uppercase">Services</h3>
               <ul className="mt-4 space-y-2">
-                {serviceLinks.map(({ href, label }) => (
+                {serviceLinks.map(({ label }) => (
                   <li key={label}>
-                    <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {label}
                     </Link>
                   </li>
