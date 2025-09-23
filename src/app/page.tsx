@@ -74,7 +74,7 @@ export default function Home() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8, ease: 'easeOut' }}
-            className="text-xl md:text-2xl text-muted-foreground mb-10"
+            className="text-xl md:text-2xl text-slate-600 mb-10"
           >
             Your Backdoor Financial Partner.
           </motion.p>
