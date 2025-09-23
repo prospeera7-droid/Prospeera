@@ -102,7 +102,7 @@ export function Footer() {
         </div>
       </div>
       <div className="w-full text-center py-4">
-        <span className="font-headline text-[16rem] font-black text-foreground/5 leading-none select-none tracking-tighter">
+        <span className="font-headline text-[16rem] font-black text-foreground/5 leading-none select-none tracking-tighter transition-colors hover:text-[#0D9488]">
             PROSPEERA
         </span>
       </div>
