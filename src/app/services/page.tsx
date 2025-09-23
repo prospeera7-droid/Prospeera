@@ -1,10 +1,12 @@
+
 'use client';
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Calculator, FileText, PiggyBank, Briefcase, BarChart, ShieldCheck, X } from 'lucide-react';
+import { Calculator, FileText, PiggyBank, Briefcase, BarChart, ShieldCheck, X, ArrowRight } from 'lucide-react';
+import Link from 'next/link';
 
 const allServices = [
   {
@@ -64,17 +66,25 @@ export default function ServicesPage() {
             layoutId={`card-${index}`}
             whileHover={{ y: -8, scale: 1.05 }}
             transition={{ type: 'spring', stiffness: 300 }}
-            onClick={() => setExpandedIndex(index)}
-            className="cursor-pointer"
+            className="flex flex-col"
           >
             <Card className="bg-background/60 backdrop-blur-sm shadow-xl h-full flex flex-col">
-              <CardHeader className="flex flex-row items-center gap-4">
-                {service.icon}
-                <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="flex-grow">
-                <p className="text-muted-foreground">{service.description}</p>
-              </CardContent>
+              <div  onClick={() => setExpandedIndex(index)} className="cursor-pointer flex-grow">
+                <CardHeader className="flex flex-row items-center gap-4">
+                  {service.icon}
+                  <CardTitle className="text-xl font-semibold">{service.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">{service.description}</p>
+                </CardContent>
+              </div>
+              <CardFooter>
+                 <Button asChild className="w-full">
+                    <Link href="/contact">
+                        Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
+                    </Link>
+                </Button>
+              </CardFooter>
             </Card>
           </motion.div>
         ))}
