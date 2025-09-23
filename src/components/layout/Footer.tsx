@@ -25,7 +25,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="border-t bg-background/80 backdrop-blur-lg">
+    <footer className="border-t bg-background/80 backdrop-blur-lg relative overflow-hidden">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
@@ -90,7 +90,9 @@ export function Footer() {
         
         <div className="mt-12 border-t pt-8 flex justify-between items-center">
             <div className="text-left">
-                <span className="text-2xl font-bold">Prospeera</span>
+                <p className="text-sm text-muted-foreground">
+                    {isMounted && `© ${year} Prospeera. All rights reserved.`}
+                </p>
             </div>
             <div className="flex items-center gap-8">
                 <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
@@ -98,13 +100,11 @@ export function Footer() {
                 </Button>
             </div>
         </div>
-
-        <div className="mt-12 border-t pt-8">
-          <p className="text-sm text-muted-foreground text-center">
-            {isMounted && `© ${year} Prospeera. All rights reserved.`}
-          </p>
-        </div>
-
+      </div>
+      <div className="w-full text-center py-4">
+        <span className="text-[16rem] font-black text-foreground/5 leading-none select-none tracking-tighter">
+            PROSPEERA
+        </span>
       </div>
     </footer>
   );
