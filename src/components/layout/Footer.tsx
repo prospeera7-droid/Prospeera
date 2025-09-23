@@ -63,19 +63,26 @@ export function Footer() {
                 ))}
               </ul>
             </div>
-            <div>
-              <h3 className="font-semibold tracking-wider uppercase">Follow Us</h3>
-              <div className="mt-4 flex space-x-4">
-                <Link href="#" aria-label="Twitter">
-                  <Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </Link>
-                <Link href="#" aria-label="LinkedIn">
-                  <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </Link>
-                <Link href="#" aria-label="GitHub">
-                  <Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                </Link>
-              </div>
+            <div className="flex flex-col justify-between">
+                <div>
+                    <h3 className="font-semibold tracking-wider uppercase">Follow Us</h3>
+                    <div className="mt-4 flex space-x-4">
+                        <Link href="#" aria-label="Twitter">
+                        <Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                        </Link>
+                        <Link href="#" aria-label="LinkedIn">
+                        <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                        </Link>
+                        <Link href="#" aria-label="GitHub">
+                        <Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                        </Link>
+                    </div>
+                </div>
+                <div className="text-right">
+                    <span className="text-4xl font-bold block">Prospeera</span>
+                    <span className="text-4xl font-bold block">Means</span>
+                    <span className="text-4xl font-bold block">Progress</span>
+                </div>
             </div>
           </div>
           
@@ -86,11 +93,6 @@ export function Footer() {
                 <span className="text-2xl font-bold">Prospeera</span>
             </div>
             <div className="flex items-center gap-8">
-                <div className="text-right">
-                    <span className="text-4xl font-bold block">Prospeera</span>
-                    <span className="text-4xl font-bold block">Means</span>
-                    <span className="text-4xl font-bold block">Progress</span>
-                </div>
                 <Button variant="outline" size="icon" onClick={scrollToTop} aria-label="Back to top">
                     <MoveUp className="h-5 w-5" />
                 </Button>
