@@ -8,6 +8,32 @@ import { useEffect, useState } from 'react';
 import { navLinks, serviceLinks } from '@/lib/links';
 import { motion } from 'framer-motion';
 
+const sloganContainerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.8, // Time between each child animation
+      repeat: Infinity,
+      repeatType: "loop",
+      repeatDelay: 2, // Wait 2 seconds before repeating the whole sequence
+    },
+  },
+};
+
+const sloganWordVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      type: 'spring',
+      stiffness: 100,
+      damping: 12,
+    },
+  },
+};
+
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
   const [isMounted, setIsMounted] = useState(false);
@@ -80,13 +106,20 @@ export function Footer() {
                     </div>
                 </div>
                 <motion.div
-                  animate={{ scale: [1, 1.02, 1] }}
-                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                   className="text-left"
+                  variants={sloganContainerVariants}
+                  initial="hidden"
+                  animate="visible"
                 >
-                    <span className="text-4xl font-bold block">Prospeera</span>
-                    <span className="text-4xl font-bold block">Means</span>
-                    <span className="text-4xl font-bold block">Progress</span>
+                  <motion.span variants={sloganWordVariants} className="text-4xl font-bold block">
+                    Prospeera
+                  </motion.span>
+                  <motion.span variants={sloganWordVariants} className="text-4xl font-bold block">
+                    Means
+                  </motion.span>
+                  <motion.span variants={sloganWordVariants} className="text-4xl font-bold block">
+                    Progress
+                  </motion.span>
                 </motion.div>
             </div>
           </div>
