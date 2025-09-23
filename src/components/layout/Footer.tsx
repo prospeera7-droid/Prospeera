@@ -38,7 +38,7 @@ export function Footer() {
             </p>
           </div>
 
-          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="md:col-span-3 grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div>
               <h3 className="font-semibold tracking-wider uppercase">Navigation</h3>
               <ul className="mt-4 space-y-2">
