@@ -28,38 +28,40 @@ export function Header() {
   return (
     <header className={cn(
       "fixed top-0 z-50 w-full transition-all duration-300",
-      "bg-background/80 backdrop-blur-sm shadow-lg border-b border-border/50 bg-gradient-to-b from-border/20 to-transparent flex items-center justify-between h-16 px-4 md:px-6"
+      "bg-background/80 backdrop-blur-sm shadow-lg border-b border-border/50 bg-gradient-to-b from-border/20 to-transparent flex items-center justify-between h-16"
     )}>
-      <Link href="/">
-          <Image src="/logo(1).png" alt="Prospeera Logo" width={300} height={58} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
-      </Link>
+      <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
+        <Link href="/">
+            <Image src="/logo(1).png" alt="Prospeera Logo" width={300} height={58} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
+        </Link>
 
-      <nav className="hidden md:flex items-center space-x-6">
-        {navLinks.map(({ href, label }) => (
-          <Link key={href} href={href} className="text-sm font-medium hover:underline underline-offset-4 transition-colors">
-            {label}
-          </Link>
-        ))}
-      </nav>
+        <nav className="hidden md:flex items-center space-x-6">
+          {navLinks.map(({ href, label }) => (
+            <Link key={href} href={href} className="text-sm font-medium hover:underline underline-offset-4 transition-colors">
+              {label}
+            </Link>
+          ))}
+        </nav>
 
-      <div className="md:hidden">
-        <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          <span className="sr-only">Toggle menu</span>
-        </Button>
-      </div>
-
-      {isOpen && (
-        <div className="absolute top-full left-0 w-full md:hidden bg-background/95 border-t">
-          <nav className="flex flex-col space-y-4 p-4">
-            {navLinks.map(({ href, label }) => (
-              <Link key={href} href={href} className="text-lg font-medium hover:bg-accent p-2 rounded-md" onClick={() => setIsOpen(false)}>
-                {label}
-              </Link>
-            ))}
-          </nav>
+        <div className="md:hidden">
+          <Button variant="ghost" size="icon" onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            <span className="sr-only">Toggle menu</span>
+          </Button>
         </div>
-      )}
+
+        {isOpen && (
+          <div className="absolute top-full left-0 w-full md:hidden bg-background/95 border-t">
+            <nav className="flex flex-col space-y-4 p-4">
+              {navLinks.map(({ href, label }) => (
+                <Link key={href} href={href} className="text-lg font-medium hover:bg-accent p-2 rounded-md" onClick={() => setIsOpen(false)}>
+                  {label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 }
