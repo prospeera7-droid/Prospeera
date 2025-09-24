@@ -30,13 +30,13 @@ export function Header() {
       "fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl transition-all duration-300 rounded-xl",
       "bg-background/80 backdrop-blur-sm shadow-lg border border-border/50 bg-gradient-to-b from-border/20 to-transparent"
     )}>
-      <div className="px-4 sm:px-6 lg:px-8">
+      <div>
         <div className="flex items-center justify-between h-16">
           <Link href="/">
             <Image src="/logo.png" alt="Prospeera Logo" width={180} height={48} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
           </Link>
 
-          <nav className="hidden md:flex items-center space-x-6">
+          <nav className="hidden md:flex items-center space-x-6 mr-8">
             {navLinks.map(({ href, label }) => (
               <Link key={href} href={href} className="text-sm font-medium hover:underline underline-offset-4 transition-colors">
                 {label}
