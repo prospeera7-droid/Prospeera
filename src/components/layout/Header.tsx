@@ -1,3 +1,4 @@
+
 'use client';
 
 import Link from 'next/link';
@@ -6,6 +7,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 
 const navLinks = [
   { href: '/', label: 'Home' },
@@ -30,8 +32,8 @@ export function Header() {
     )}>
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="text-2xl font-bold hover:opacity-80 transition-opacity">
-            Prospeera
+          <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Image src="/prospeera.svg" alt="Prospeera Logo" width={150} height={40} priority />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6">

@@ -7,6 +7,7 @@ import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { navLinks, serviceLinks } from '@/lib/links';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 export function Footer() {
   const [year, setYear] = useState(new Date().getFullYear());
@@ -31,8 +32,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
           <div className="md:col-span-1">
-            <Link href="/" className="text-2xl font-bold hover:opacity-80 transition-opacity">
-              Prospeera
+            <Link href="/" className="hover:opacity-80 transition-opacity">
+              <Image src="/prospeera.svg" alt="Prospeera Logo" width={150} height={40} />
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
               Your Backdoor Financial Partner.
