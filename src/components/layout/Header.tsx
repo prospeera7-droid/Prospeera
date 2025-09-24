@@ -33,7 +33,7 @@ export function Header() {
       <div>
         <div className="flex items-center justify-between h-16">
           <Link href="/">
-            <Image src="/logo.png" alt="Prospeera Logo" width={180} height={48} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
+            <Image src="/logo.png" alt="Prospeera Logo" width={200} height={53} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-6 mr-8">
