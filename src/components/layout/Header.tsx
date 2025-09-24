@@ -31,7 +31,7 @@ export function Header() {
       "bg-background/80 backdrop-blur-sm shadow-lg border border-border/50 bg-gradient-to-b from-border/20 to-transparent flex items-center justify-between h-16"
     )}>
       <Link href="/">
-          <Image src="/logo.png" alt="Prospeera Logo" width={200} height={53} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
+          <Image src="/logo.png" alt="Prospeera Logo" width={300} height={60} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
       </Link>
 
       <nav className="hidden md:flex items-center space-x-6 mr-8">
