@@ -4,7 +4,8 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Star, MessageCircle, UserPlus, Circle } from "lucide-react"
+import { Star, Linkedin } from "lucide-react"
+import Link from "next/link";
 
 export type ProfileProps = {
   imageUrl: string;
@@ -12,9 +13,10 @@ export type ProfileProps = {
   name: string;
   title: string;
   followers: string;
+  linkedinUrl?: string;
 };
 
-export function ProfileCard({ imageUrl, imageHint, name, title, followers }: ProfileProps) {
+export function ProfileCard({ imageUrl, imageHint, name, title, followers, linkedinUrl }: ProfileProps) {
   return (
     <div className="relative max-w-sm w-full bg-background/20 backdrop-blur-sm rounded-2xl shadow-xl p-8 border border-border">
       <div className="absolute top-4 right-4 flex items-center gap-2">
@@ -40,19 +42,18 @@ export function ProfileCard({ imageUrl, imageHint, name, title, followers }: Pro
         <p className="text-sm text-muted-foreground mt-1">{followers}</p>
       </div>
 
-      <div className="flex justify-around mt-8 gap-4">
-        <Button
-          variant="outline"
-          className="w-full h-12 rounded-full bg-background/60 backdrop-blur-sm border-border hover:bg-accent"
-        >
-          <UserPlus className="w-5 h-5 text-muted-foreground" />
-        </Button>
-        <Button
-          variant="outline"
-          className="w-full h-12 rounded-full bg-background/60 backdrop-blur-sm border-border hover:bg-accent"
-        >
-          <MessageCircle className="w-5 h-5 text-muted-foreground" />
-        </Button>
+      <div className="flex justify-center mt-8">
+        {linkedinUrl && (
+          <Button
+            asChild
+            variant="outline"
+            className="w-full h-12 rounded-full bg-background/60 backdrop-blur-sm border-border hover:bg-accent"
+          >
+            <Link href={linkedinUrl} target="_blank" aria-label={`${name}'s LinkedIn Profile`}>
+                <Linkedin className="w-6 h-6 text-muted-foreground" />
+            </Link>
+          </Button>
+        )}
       </div>
     </div>
   )

@@ -10,9 +10,10 @@ const teamMembers: ProfileProps[] = [
   {
     imageUrl: "https://picsum.photos/seed/emily/200/200",
     imageHint: "woman portrait",
-    name: "Emily Wilson",
-    title: "Founder & CEO",
+    name: "Jane Doe",
+    title: "Chief Financial Officer",
     followers: "2,100 followers",
+    linkedinUrl: "https://www.linkedin.com/in/janedoe",
   },
   {
     imageUrl: "https://picsum.photos/seed/liam/200/200",
@@ -20,6 +21,7 @@ const teamMembers: ProfileProps[] = [
     name: "Liam Thompson",
     title: "Lead Financial Analyst",
     followers: "1,800 followers",
+    linkedinUrl: "https://www.linkedin.com/in/liamthompson",
   },
   {
     imageUrl: "https://picsum.photos/seed/sophia/200/200",
@@ -27,6 +29,7 @@ const teamMembers: ProfileProps[] = [
     name: "Sophia Chen",
     title: "Head of Client Relations",
     followers: "1,950 followers",
+    linkedinUrl: "https://www.linkedin.com/in/sophiachen",
   },
 ];
 
