@@ -27,14 +27,14 @@ export function Header() {
 
   return (
     <header className={cn(
-      "fixed top-4 z-50 left-1/2 -translate-x-1/2 w-[95%] max-w-7xl transition-all duration-300 rounded-xl",
-      "bg-background/80 backdrop-blur-sm shadow-lg border border-border/50 bg-gradient-to-b from-border/20 to-transparent flex items-center justify-between h-16"
+      "fixed top-0 z-50 w-full transition-all duration-300",
+      "bg-background/80 backdrop-blur-sm shadow-lg border-b border-border/50 bg-gradient-to-b from-border/20 to-transparent flex items-center justify-between h-16 px-4 md:px-6"
     )}>
       <Link href="/">
           <Image src="/logo(1).png" alt="Prospeera Logo" width={300} height={58} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
       </Link>
 
-      <nav className="hidden md:flex items-center space-x-6 mr-8">
+      <nav className="hidden md:flex items-center space-x-6">
         {navLinks.map(({ href, label }) => (
           <Link key={href} href={href} className="text-sm font-medium hover:underline underline-offset-4 transition-colors">
             {label}
