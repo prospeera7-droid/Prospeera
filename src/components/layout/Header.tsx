@@ -32,7 +32,7 @@ export function Header() {
     )}>
       <div className="px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link href="/" className="hover:opacity-80 transition-opacity">
+          <Link href="/">
             <Image src="/logo.png" alt="Prospeera Logo" width={150} height={40} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
           </Link>
 

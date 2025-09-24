@@ -32,7 +32,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           
           <div className="md:col-span-1">
-            <Link href="/" className="hover:opacity-80 transition-opacity">
+            <Link href="/">
               <Image src="/logo.png" alt="Prospeera Logo" width={150} height={40} className="mix-blend-color-burn dark:mix-blend-lighten" />
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
