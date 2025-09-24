@@ -29,7 +29,7 @@ export default function RootLayout({
       <body className={cn('font-body antialiased', sourceCodePro.variable)}>
         <BackgroundPaths />
         <Header />
-        <main>{children}</main>
+        <main className="pt-20">{children}</main>
         <Footer />
         <Toaster />
       </body>

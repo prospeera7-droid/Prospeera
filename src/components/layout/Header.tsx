@@ -19,7 +19,16 @@ const navLinks = [
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const pathname = usePathname();
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   useEffect(() => {
     setIsOpen(false);
@@ -27,10 +36,10 @@ export function Header() {
 
   return (
     <header className={cn(
-      "fixed top-0 z-50 w-full transition-all duration-300",
-      "bg-background/80 backdrop-blur-sm shadow-lg border-b border-border/50 bg-gradient-to-b from-border/20 to-transparent flex items-center justify-between h-16"
+      "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+      isScrolled ? "bg-background/80 backdrop-blur-sm shadow-lg border-b" : "bg-transparent border-b border-transparent"
     )}>
-      <div className="container mx-auto flex items-center justify-between px-4 md:px-6">
+      <div className="container mx-auto flex h-20 items-center justify-between px-4 md:px-6">
         <Link href="/">
             <Image src="/logo(1).png" alt="Prospeera Logo" width={300} height={58} priority className="mix-blend-color-burn dark:mix-blend-lighten" />
         </Link>
