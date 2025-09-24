@@ -33,7 +33,7 @@ export function Footer() {
           
           <div className="md:col-span-1">
             <Link href="/">
-              <Image src="/logo.png" alt="Prospeera Logo" width={180} height={48} className="mix-blend-color-burn dark:mix-blend-lighten" />
+              <Image src="/logo(1).png" alt="Prospeera Logo" width={180} height={48} className="mix-blend-color-burn dark:mix-blend-lighten" />
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
               Your Backdoor Financial Partner.
