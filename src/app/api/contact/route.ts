@@ -18,23 +18,33 @@ export async function POST(req: NextRequest) {
     const { name, email, message } = ContactFormSchema.parse(body);
 
     // Save to Firestore
-    await addDoc(collection(db, "contacts"), {
-      name,
-      email,
-      message,
-      createdAt: serverTimestamp(),
-    });
+    try {
+      await addDoc(collection(db, "contacts"), {
+        name,
+        email,
+        message,
+        createdAt: serverTimestamp(),
+      });
+    } catch (error) {
+      console.error('Error saving to Firestore:', error);
+      return new Response('Error saving to database.', { status: 500 });
+    }
 
     // Send email with Resend
-    await resend.emails.send({
-      from: 'onboarding@resend.dev',
-      to: 'prospeera7@gmail.com',
-      subject: 'New Contact Form Submission',
-      html: `<p>You have a new contact form submission:</p>
-             <p><strong>Name:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Message:</strong> ${message}</p>`,
-    });
+    try {
+      await resend.emails.send({
+        from: 'onboarding@resend.dev',
+        to: 'prospeera7@gmail.com',
+        subject: 'New Contact Form Submission',
+        html: `<p>You have a new contact form submission:</p>
+               <p><strong>Name:</strong> ${name}</p>
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Message:</strong> ${message}</p>`,
+      });
+    } catch (error) {
+      console.error('Error sending email with Resend:', error);
+      return new Response('Error sending email.', { status: 500 });
+    }
 
     return NextResponse.json({ message: 'Message sent successfully!' });
   } catch (error) {
