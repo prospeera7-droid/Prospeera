@@ -5,6 +5,11 @@ runConfig:
   # Increase this value if you'd like to automatically spin up
   # more instances in response to increased traffic.
   maxInstances: 1
+  # Add environment variables to your backend.
+  # These will be available during both build and run time.
+  # https://firebase.google.com/docs/app-hosting/configure#environment-variables
+  environmentVariables:
+    RESEND_API_KEY: re_h4fkcrVZ_9x3zsfTMK2tmKupjT7t7UtZL
 
 # Specifies the commands to build and run the application.
 build:
