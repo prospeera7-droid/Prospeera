@@ -5,8 +5,6 @@ import { db } from '@/lib/firebase';
 import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const ContactFormSchema = z.object({
   name: z.string().min(2),
   email: z.string().email(),
@@ -14,6 +12,7 @@ const ContactFormSchema = z.object({
 });
 
 export async function POST(req: NextRequest) {
+  const resend = new Resend(process.env.RESEND_API_KEY);
   try {
     const body = await req.json();
     const { name, email, message } = ContactFormSchema.parse(body);
