@@ -30,6 +30,7 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  allowedDevOrigins: ["https://9003-firebase-prospeera-1758797319554.cluster-3gc7bglotjgwuxlqpiut7yyqt4.cloudworkstations.dev"],
 };
 
 export default nextConfig;
