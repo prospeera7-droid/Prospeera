@@ -1,27 +1,5 @@
-# Settings to manage and configure a Firebase App Hosting backend.
-# https://firebase.google.com/docs/app-hosting/configure
 
 runConfig:
-  # Increase this value if you'd like to automatically spin up
-  # more instances in response to increased traffic.
-  maxInstances: 1
-  # Add environment variables to your backend.
-  # These will be available during both build and run time.
-  # https://firebase.google.com/docs/app-hosting/configure#environment-variables
-  environmentVariables:
-    RESEND_API_KEY: re_h4fkcrVZ_9x3zsfTMK2tmKupjT7t7UtZL
-    NEXT_PUBLIC_FIREBASE_API_KEY: AIzaSyAUHiVmCu4Hfo1_x0PA7-LBcB1nZ-3Jgas
-    NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN: prospeera-853b2.firebaseapp.com
-    NEXT_PUBLIC_FIREBASE_PROJECT_ID: prospeera-853b2
-    NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET: prospeera-853b2.firebasestorage.app
-    NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID: "541675951559"
-    NEXT_PUBLIC_FIREBASE_APP_ID: 1:541675951559:web:b12c82153fa0c0d53b75e2
-    NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID: G-HM1NYWH6GT
-
-# Specifies the commands to build and run the application.
-build:
-  command: "npm run build"
-  outputDir: ".next"
-
-run:
-  command: "npm run start"
+  secrets:
+    - secret: RESEND_API_KEY
+      environmentVariable: RESEND_API_KEY
