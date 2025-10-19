@@ -50,6 +50,9 @@ export function Header() {
               {label}
             </Link>
           ))}
+          <Button asChild>
+            <Link href="https://calendly.com/prospeera7" target="_blank">Schedule a Call</Link>
+          </Button>
         </nav>
 
         <div className="md:hidden">
@@ -67,6 +70,9 @@ export function Header() {
                   {label}
                 </Link>
               ))}
+              <Link href="https://calendly.com/prospeera7" target="_blank" className="text-lg font-medium hover:bg-accent p-2 rounded-md" onClick={() => setIsOpen(false)}>
+                Schedule a Call
+              </Link>
             </nav>
           </div>
         )}

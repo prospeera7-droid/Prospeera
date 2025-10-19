@@ -71,7 +71,7 @@ export default function ContactPage() {
               <CardContent className="flex flex-col items-center justify-center text-center">
                  <CalendarDays className="h-16 w-16 text-primary mb-6" />
                  <Button asChild size="lg" className="w-full rounded-full">
-                  <Link href="/contact">
+                  <Link href="https://calendly.com/prospeera7" target="_blank">
                     Book Now <ArrowRight className="ml-2 h-5 w-5" />
                   </Link>
                 </Button>

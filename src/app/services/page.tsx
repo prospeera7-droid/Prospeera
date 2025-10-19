@@ -89,7 +89,7 @@ export default function ServicesPage() {
 
       <div className="text-center mt-16">
         <Btn03 asChild size="lg" className="rounded-full">
-          <Link href="/contact">
+          <Link href="https://calendly.com/prospeera7" target="_blank">
             Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
           </Link>
         </Btn03>
@@ -125,7 +125,7 @@ export default function ServicesPage() {
                 <CardContent>
                   <p className="text-muted-foreground">{allServices[expandedIndex].fullDescription}</p>
                   <Button asChild className="mt-6 w-full rounded-full">
-                    <Link href="/contact">
+                    <Link href="https://calendly.com/prospeera7" target="_blank">
                         Schedule meeting <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </Button>
