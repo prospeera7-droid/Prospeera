@@ -1,8 +1,7 @@
 
 import { type NextRequest, NextResponse } from 'next/server';
 import { z } from 'zod';
-import { db } from '@/lib/firebase';
-import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { google } from 'googleapis';
 import { Resend } from 'resend';
 
 const ContactFormSchema = z.object({
@@ -17,16 +16,32 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { name, email, message } = ContactFormSchema.parse(body);
 
-    // Save to Firestore
+    // Save to Google Sheets
     try {
-      await addDoc(collection(db, "contacts"), {
-        name,
-        email,
-        message,
-        createdAt: serverTimestamp(),
+      const spreadsheetId = '15rAnP3OsJyWl3iObEivgxKo6mhvSsqnRRe5ehpCDaRQ';
+
+      const auth = new google.auth.GoogleAuth({
+        // Use credentials from the JSON file in development,
+        // and Application Default Credentials in production.
+        credentials: process.env.NODE_ENV !== 'production' 
+            ? require('@/../google-sheets-credentials.json') 
+            : undefined,
+        scopes: ['https://www.googleapis.com/auth/spreadsheets'],
+      });
+
+      const sheets = google.sheets({ version: 'v4', auth });
+      const timestamp = new Date().toISOString();
+
+      await sheets.spreadsheets.values.append({
+        spreadsheetId,
+        range: 'Sheet1!A:D',
+        valueInputOption: 'USER_ENTERED',
+        requestBody: {
+          values: [[name, email, message, timestamp]],
+        },
       });
     } catch (error) {
-      console.error('Error saving to Firestore:', error);
+      console.error('Error saving to Google Sheets:', error);
       return new Response('Error saving to database.', { status: 500 });
     }
 
