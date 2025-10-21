@@ -1,14 +1,10 @@
 
-import type { Metadata } from 'next';
+'use client';
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Users, Target, Eye } from 'lucide-react';
 import { ProfileCard, type ProfileProps } from "@/components/ProfileCard";
 import { motion } from "framer-motion";
-
-export const metadata: Metadata = {
-  title: 'About Prospeera | Our Mission, Vision, and Team',
-  description: 'Learn about the mission, vision, and the team behind Prospeera. We are dedicated to empowering freelancers with financial clarity and prosperity.',
-};
 
 const teamMembers: ProfileProps[] = [
   {
@@ -88,7 +84,7 @@ export default function AboutUsPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
           {teamMembers.map((member, index) => (
             <ProfileCard key={index} {...member} />
-          ))ж
+          ))}
         </div>
 
       </div>
