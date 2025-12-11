@@ -41,7 +41,24 @@ export default function AboutUsPage() {
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">About Prospeera</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Empowering freelancers to achieve financial clarity and prosperity.
+            Empowering Partnership to achieve financial clarity and prosperity.
+          </p>
+        </div>
+
+        <div className="text-justify mb-16 max-w-6xl mx-auto text-lg text-muted-foreground">
+          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-8 text-primary">Why us:</h2>
+          <p className="mt-4">
+            The world of money can become challenging, terrifying and filled with complexity. The goal of our company is to simplify and strengthen finance for individuals.
+            We aim to substitute stress with knowledge, ambiguity with assurance.
+          </p>
+          <h3 className="text-xl md:text-2xl font-bold tracking-tight mt-8 text-primary">Our How – What Makes Us Different :</h3>
+          <ul className="mt-4 list-disc list-inside">
+            <li>Innovation integration with expertise human: We will employ highly intelligent tools and analytics, but always with genuine human direction.</li>
+            <li>Honesty over confusion: There are no extra expenses or unclear conditions—only clear, genuine recommendations.</li>
+            <li>Focus on your Target: Every approach is unique to your present situation, desires, and prospects.</li>
+          </ul>
+          <p className="mt-8">
+            Mark us your financial GPS; we're here to assist you navigate the hurdles, obstacles, and chances to shine on your path towards achievement.
           </p>
         </div>
 
@@ -54,7 +71,17 @@ export default function AboutUsPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-muted-foreground">
-                  To provide accessible, expert financial services tailored specifically for the unique challenges and opportunities faced by freelancers and independent professionals. We simplify accounting so you can focus on what you do best.
+                Our mission is to empower CPA firms across the U.S. to scale confidently — by delivering accurate, reliable, and cost-effective financial back-office solutions that free up their time, reduce overhead, and maximize profitability. We aim to be the invisible partner driving their long-term growth.
+                <br /><br />
+                🤝 Empower CPAs 
+                <br />
+                🎯 Precision & Accuracy 
+                <br />
+                💰 Cost Efficiency 
+                <br />
+                📈 Growth & Profitability 
+                <br />
+                👤 Invisible Partner 
                 </p>
               </CardContent>
             </Card>
@@ -68,7 +95,18 @@ export default function AboutUsPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p className="text-muted-foreground">
-                  To be the leading financial partner for freelancers worldwide, fostering a global community of financially savvy and independent professionals. We envision a future where every freelancer has the tools and confidence to build a prosperous and sustainable career.
+                  We don't just manage finances; we as a species build Financial Liberty Stories of Success.
+                  At Prospeera, we agree that finances need to be about people, ambitions, and a confident future.
+                  <br /><br />
+                  🔒 Trust & Backbone 
+                  <br />
+                  ⚙️ Human + Automation 
+                  <br />
+                  📊 Future of Accounting 
+                  <br />
+                  👓 Focus on Clients 
+                  <br />
+                  🚀 Future Growth 
                 </p>
               </CardContent>
             </Card>
