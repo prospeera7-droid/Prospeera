@@ -11,18 +11,18 @@ import Btn03 from '@/components/ui/Btn03';
 const services = [
   {
     icon: <Calculator className="w-8 h-8" />,
-    title: 'Bookkeeping & Accounting',
-    description: 'We handle your books so you can focus on your craft. Meticulous, accurate, and always on time.',
+    title: 'Bookkeeping & Data Entry',
+    description: 'Stay audit-ready, always. We manage your books with precision so you can focus on growth, not data entry.',
   },
   {
     icon: <FileText className="w-8 h-8" />,
     title: 'Tax Planning & Preparation',
-    description: 'Navigate tax season with ease. We specialize in tax strategies for freelancers to maximize your returns.',
+    description: 'From planning to filing ready — we make taxes stress-free, compliant, and optimized for every client’s financial advantage.',
   },
   {
     icon: <PiggyBank className="w-8 h-8" />,
-    title: 'Financial Advisory',
-    description: 'Plan for your future with expert advice on savings, investments, and retirement for the self-employed.',
+    title: 'Accounting',
+    description: 'Transform raw data into strategic financial insights. Our accounting solutions bring clarity, control, and confidence to every number.',
   },
 ];
 
@@ -95,7 +95,7 @@ export default function Home() {
       <section id="services" className="w-full py-20 lg:py-32 bg-transparent">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-            Our Core Services
+            Our Core Support Areas
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {services.map((service, index) => (

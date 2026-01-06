@@ -2,7 +2,7 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Target, Eye } from 'lucide-react';
+import { Users, Target, Eye, HeartHandshake } from 'lucide-react';
 import { ProfileCard, type ProfileProps } from "@/components/ProfileCard";
 import { motion } from "framer-motion";
 
@@ -62,7 +62,7 @@ export default function AboutUsPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
           <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
             <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
               <CardHeader className="items-center text-center">
@@ -107,6 +107,28 @@ export default function AboutUsPage() {
                   👓 Focus on Clients 
                   <br />
                   🚀 Future Growth 
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+
+          <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
+              <CardHeader className="items-center text-center">
+                <HeartHandshake className="h-10 w-10 mb-4 text-primary" />
+                <CardTitle className="text-2xl font-semibold">Our Promise</CardTitle>
+              </CardHeader>
+              <CardContent className="text-center">
+                <p className="text-muted-foreground">
+                As Our company name says that “Pros” and “Peera” is combination of growth with success so, we want to achieve this meaning with you.
+                <br /><br />
+                With us, you’re not just a client. You’re a partner. We promise to always deliver:
+                <br /><br />
+                🤝 Transparency in every transaction. 
+                <br />
+                💡 Simplicity in every solution. 
+                <br />
+                📈 Growth in every partnership. 
                 </p>
               </CardContent>
             </Card>
