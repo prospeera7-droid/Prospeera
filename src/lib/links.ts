@@ -1,16 +1,15 @@
-
 export const navLinks = [
   { href: '/about', label: 'About Us' },
   { href: '/services', label: 'Services' },
-  { href: '/case-studies', label: 'Case Studies' },
+  { href: '/insights', label: 'Insights' },
   { href: '/contact', label: 'Contact Us' },
 ];
 
 export const serviceLinks = [
-    { href: '/services', label: 'Bookkeeping & Accounting' },
-    { href: '/services', label: 'Tax Planning & Preparation' },
-    { href: '/services', label: 'Financial Advisory' },
-    { href: '/services', label: 'Business Formation' },
-    { href: '/services', label: 'Financial Reporting' },
-    { href: '/services', label: 'IRS Representation' },
+    { href: '/services/bookkeeping-data-entry', label: 'Bookkeeping & Data entry' },
+    { href: '/services/accounting', label: 'Accounting' },
+    { href: '/services/tax-planning-preparation-support', label: 'Tax Planning & Preparation Support' },
+    { href: '/services/payroll-management', label: 'Payroll Management' },
+    { href: '/services/financial-reporting', label: 'Financial Reporting' },
+    { href: '/services/business-advisory-support', label: 'Business Advisory Support' },
 ]

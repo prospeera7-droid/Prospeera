@@ -7,6 +7,7 @@ import { useEffect, useState, useCallback } from "react"
 interface AnimatedButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   particleCount?: number;
   disabled?: boolean;
+  type?: 'submit' | 'reset' | 'button';
 }
 
 interface Particle {
@@ -15,7 +16,7 @@ interface Particle {
   y: number
 }
 
-export function AnimatedButton({ children, className, particleCount = 12, disabled, ...props }: AnimatedButtonProps) {
+export function AnimatedButton({ children, className, particleCount = 12, disabled, type, ...props }: AnimatedButtonProps) {
   const [isHovered, setIsHovered] = useState(false)
   const [particles, setParticles] = useState<Particle[]>([])
   const [scope, animate] = useAnimate();
@@ -32,7 +33,7 @@ export function AnimatedButton({ children, className, particleCount = 12, disabl
   const handleInteractionStart = useCallback(() => {
     if (disabled) return;
     setIsHovered(true)
-    animate("div", {
+    animate(".particle", {
       x: 0,
       y: 0,
     },
@@ -46,20 +47,23 @@ export function AnimatedButton({ children, className, particleCount = 12, disabl
   const handleInteractionEnd = useCallback(() => {
     if (disabled) return;
     setIsHovered(false)
-    animate("div", (i) => ({
-      x: particles[i]?.x,
-      y: particles[i]?.y,
-    }),
-    {
-      type: "spring",
-      stiffness: 100,
-      damping: 15,
-    })
+    const sequence: any[] = particles.map((p, i) => ([
+      `.particle-${i}`,
+      { x: p.x, y: p.y },
+      {
+        type: "spring",
+        stiffness: 100,
+        damping: 15,
+        delay: Math.random() * 0.1,
+      },
+    ]));
+    animate(sequence);
   }, [animate, particles, disabled])
 
   return (
     <button
       ref={scope as React.Ref<HTMLButtonElement>}
+      type={type}
       className={cn(
         "relative touch-none inline-flex items-center justify-center h-11 rounded-md px-8",
         "bg-primary text-primary-foreground",
@@ -78,9 +82,10 @@ export function AnimatedButton({ children, className, particleCount = 12, disabl
       {particles.map((particle, index) => (
         <motion.div
           key={index}
-          custom={index}
           initial={{ x: particle.x, y: particle.y }}
           className={cn(
+            `particle-${index}`,
+            "particle",
             "absolute w-1.5 h-1.5 rounded-full",
             "bg-primary-foreground/50",
             "transition-opacity duration-300",

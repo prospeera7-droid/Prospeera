@@ -41,7 +41,6 @@ export async function POST(req: NextRequest) {
         },
       });
     } catch (error) {
-      console.error('Error saving to Google Sheets:', error);
       return new Response('Error saving to database.', { status: 500 });
     }
 
@@ -57,7 +56,6 @@ export async function POST(req: NextRequest) {
                <p><strong>Message:</strong> ${message}</p>`,
       });
     } catch (error) {
-      console.error('Error sending email with Resend:', error);
       return new Response('Error sending email.', { status: 500 });
     }
 
@@ -67,7 +65,6 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify(error.issues), { status: 400 });
     }
 
-    console.error('Error processing contact form:', error);
     return new Response('Internal Server Error', { status: 500 });
   }
 }

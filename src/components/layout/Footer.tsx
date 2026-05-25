@@ -1,8 +1,10 @@
 
+// Forcing a re-evaluation of this file to clear a stubborn cache error.
+
 'use client';
 
 import Link from 'next/link';
-import { Twitter, Linkedin, Github, MoveUp } from 'lucide-react';
+import { Linkedin, Instagram, Facebook, MoveUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useEffect, useState } from 'react';
 import { navLinks, serviceLinks } from '@/lib/links';
@@ -33,10 +35,10 @@ export function Footer() {
           
           <div className="md:col-span-1">
             <Link href="/">
-              <Image src="/logo(1).png" alt="Prospeera Logo" width={240} height={64} className="mix-blend-color-burn dark:mix-blend-lighten" />
+              <Image src="/logo.png" alt="Prospeera Logo" width={240} height={64} className="mix-blend-color-burn dark:mix-blend-lighten" />
             </Link>
             <p className="text-muted-foreground mt-2 text-sm">
-              Your Backdoor Financial Partner.
+              Operating Behind the Numbers.
             </p>
           </div>
 
@@ -56,9 +58,9 @@ export function Footer() {
              <div>
               <h3 className="font-semibold tracking-wider uppercase">Services</h3>
               <ul className="mt-4 space-y-2">
-                {serviceLinks.map(({ label }, index) => (
+                {serviceLinks.map(({ href, label }, index) => (
                   <li key={`${label}-${index}`}>
-                    <Link href="/services" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    <Link href={href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
                       {label}
                     </Link>
                   </li>
@@ -69,14 +71,14 @@ export function Footer() {
               <div>
                 <h3 className="font-semibold tracking-wider uppercase">Follow Us</h3>
                 <div className="mt-4 flex space-x-4">
-                    <Link href="#" aria-label="Twitter">
-                    <Twitter className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
-                    </Link>
-                    <Link href="#" aria-label="LinkedIn">
+                    <Link href="https://www.linkedin.com/company/prospeera/" aria-label="LinkedIn">
                     <Linkedin className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
                     </Link>
-                    <Link href="#" aria-label="GitHub">
-                    <Github className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                    <Link href="https://www.instagram.com/prospeera_07?igsh=MTg2b2dvODh4cW9oOQ==" aria-label="Instagram">
+                    <Instagram className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
+                    </Link>
+                    <Link href="https://www.facebook.com/profile.php?id=61586188198246&sk=about" aria-label="Facebook">
+                    <Facebook className="h-6 w-6 text-muted-foreground hover:text-primary transition-colors" />
                     </Link>
                 </div>
               </div>
@@ -91,7 +93,7 @@ export function Footer() {
         <div className="mt-12 border-t pt-8 flex justify-between items-center">
             <div className="text-left">
                 <p className="text-sm text-muted-foreground">
-                    {isMounted && `© ${year} Prospeera. All rights reserved.`}
+                    {isMounted && `© ${year} Prospeera Global Accounting Pvt Ltd. All rights reserved.`}
                 </p>
             </div>
             <div className="flex items-center gap-8">

@@ -2,151 +2,145 @@
 'use client';
 
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Users, Target, Eye, HeartHandshake } from 'lucide-react';
-import { ProfileCard, type ProfileProps } from "@/components/ProfileCard";
+import { Target, Eye, HeartHandshake, Users, ThumbsUp, Briefcase, CheckCircle } from 'lucide-react';
 import { motion } from "framer-motion";
 
-const teamMembers: ProfileProps[] = [
-  {
-    imageUrl: "https://picsum.photos/seed/emily/200/200",
-    imageHint: "woman portrait",
-    name: "Jane Doe",
-    title: "Chief Financial Officer",
-    followers: "2,100 followers",
-    linkedinUrl: "https://www.linkedin.com/in/janedoe",
-  },
-  {
-    imageUrl: "https://picsum.photos/seed/liam/200/200",
-    imageHint: "man portrait glasses",
-    name: "Liam Thompson",
-    title: "Lead Financial Analyst",
-    followers: "1,800 followers",
-    linkedinUrl: "https://www.linkedin.com/in/liamthompson",
-  },
-  {
-    imageUrl: "https://picsum.photos/seed/sophia/200/200",
-    imageHint: "woman portrait smiling",
-    name: "Sophia Chen",
-    title: "Head of Client Relations",
-    followers: "1,950 followers",
-    linkedinUrl: "https://www.linkedin.com/in/sophiachen",
-  },
-];
-
+const fadeIn = {
+  initial: { opacity: 0, y: 20 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: 'easeOut' as const },
+};
 
 export default function AboutUsPage() {
   return (
     <div className="relative min-h-screen">
       <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28">
-        <div className="text-center mb-16">
+        <motion.div {...fadeIn} className="text-center mb-20">
           <h1 className="text-4xl md:text-5xl font-bold tracking-tight">About Prospeera</h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
             Empowering Partnership to achieve financial clarity and prosperity.
           </p>
-        </div>
+        </motion.div>
 
-        <div className="text-justify mb-16 max-w-6xl mx-auto text-lg text-muted-foreground">
-          <h2 className="text-2xl md:text-3xl font-bold tracking-tight mt-8 text-primary">Why us:</h2>
-          <p className="mt-4">
-            The world of money can become challenging, terrifying and filled with complexity. The goal of our company is to simplify and strengthen finance for individuals.
-            We aim to substitute stress with knowledge, ambiguity with assurance.
-          </p>
-          <h3 className="text-xl md:text-2xl font-bold tracking-tight mt-8 text-primary">Our How – What Makes Us Different :</h3>
-          <ul className="mt-4 list-disc list-inside">
-            <li>Innovation integration with expertise human: We will employ highly intelligent tools and analytics, but always with genuine human direction.</li>
-            <li>Honesty over confusion: There are no extra expenses or unclear conditions—only clear, genuine recommendations.</li>
-            <li>Focus on your Target: Every approach is unique to your present situation, desires, and prospects.</li>
-          </ul>
-          <p className="mt-8">
-            Mark us your financial GPS; we're here to assist you navigate the hurdles, obstacles, and chances to shine on your path towards achievement.
-          </p>
-        </div>
+        <motion.div {...fadeIn} className="mb-20">
+          <Card className="bg-background/20 backdrop-blur-sm shadow-xl">
+            <CardContent className="p-8 text-center text-lg text-muted-foreground">
+              <p>
+                Prospeera provides dedicated back-office support to US CPA firms and small accounting practices seeking operational efficiency and scalable growth. We assist accounting firms with structured bookkeeping, tax preparation support, accounting and financial reporting—working quietly behind the scenes to strengthen day-to-day operations and reduce internal workload. As your backdoor partner, Prospeera integrates into your existing workflows, enabling your team to focus on advisory services, client relationships, and firm expansion.
+              </p>
+            </CardContent>
+          </Card>
+        </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+        <div className="grid md:grid-cols-2 gap-12 mb-20">
+          <motion.div {...fadeIn}>
             <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
-              <CardHeader className="items-center text-center">
+              <CardHeader className="flex-row items-center gap-4">
+                <Users className="h-8 w-8 text-primary" />
+                <CardTitle className="text-2xl font-semibold">Who We Are?</CardTitle>
+              </CardHeader>
+              <CardContent className="text-muted-foreground">
+                <p>
+                  Prospeera was established to support CPA firms that require dependable operational support without increasing internal headcount. We understand the complexities of accounting operations—regulatory requirements, seasonal demand, and precision-driven processes. Our role is to provide consistent, process-aligned back-office services that complement your firm’s standards and timelines.
+                </p>
+              </CardContent>
+            </Card>
+          </motion.div>
+          <motion.div {...fadeIn}>
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
+              <CardHeader className="flex-row items-center gap-4">
+                <ThumbsUp className="h-8 w-8 text-primary" />
+                <CardTitle className="text-2xl font-semibold">Why us:</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground mb-4">
+                  Prospeera is purpose-built to support US CPA firms and small accounting practices with dependable, process-driven back-office services. We focus on operational consistency, compliance alignment, and scalable support—so firms can grow without increasing internal complexity.
+                </p>
+                <ul className="space-y-2">
+                  {[
+                    'CPA-Focused Expertise',
+                    'Process-Driven Delivery',
+                    'Seamless Workflow Integration',
+                    'Scalable Back-Office Support',
+                    'Confidentiality & Compliance Mindset',
+                  ].map((item, index) => (
+                    <li key={index} className="flex items-center">
+                      <CheckCircle className="w-5 h-5 text-green-500 mr-3" />
+                      <span className="text-muted-foreground">{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
+          <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full text-center">
+              <CardHeader className="items-center">
                 <Target className="h-10 w-10 mb-4 text-primary" />
                 <CardTitle className="text-2xl font-semibold">Our Mission</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-muted-foreground">
-                Our mission is to empower CPA firms across the U.S. to scale confidently — by delivering accurate, reliable, and cost-effective financial back-office solutions that free up their time, reduce overhead, and maximize profitability. We aim to be the invisible partner driving their long-term growth.
-                <br /><br />
-                🤝 Empower CPAs 
-                <br />
-                🎯 Precision & Accuracy 
-                <br />
-                💰 Cost Efficiency 
-                <br />
-                📈 Growth & Profitability 
-                <br />
-                👤 Invisible Partner 
-                </p>
+              <CardContent className="text-muted-foreground">
+                <p>To support US CPA firms with structured back-office services that enable confident scaling, streamlined operations, and long-term firm growth.</p>
+                <ul className="mt-4 space-y-2">
+                  {['🤝 CPA-Focused Support', '🎯 Process-Driven Accuracy', '⚙️ Operational Efficiency', '📈 Scalable Firm Growth', '🧩 Invisible Back-Office Partner'].map((item, index) => (
+                     <li key={index} className="flex items-center justify-center"><span className="text-muted-foreground">{item}</span></li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           </motion.div>
 
           <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
-              <CardHeader className="items-center text-center">
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full text-center">
+              <CardHeader className="items-center">
                 <Eye className="h-10 w-10 mb-4 text-primary" />
                 <CardTitle className="text-2xl font-semibold">Our Vision</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-muted-foreground">
-                  We don't just manage finances; we as a species build Financial Liberty Stories of Success.
-                  At Prospeera, we agree that finances need to be about people, ambitions, and a confident future.
-                  <br /><br />
-                  🔒 Trust & Backbone 
-                  <br />
-                  ⚙️ Human + Automation 
-                  <br />
-                  📊 Future of Accounting 
-                  <br />
-                  👓 Focus on Clients 
-                  <br />
-                  🚀 Future Growth 
-                </p>
+              <CardContent className="text-muted-foreground">
+                <p>To become a trusted long-term back-office partner for CPA firms by supporting operational excellence, scalability, and consistent service delivery</p>
+                <ul className="mt-4 space-y-2">
+                  {['🔒 Trust & Data Security', '⚙️ Process-Driven Support', '📊 Modern Accounting Workflows', '👓 Client-Centric Operations', '🚀 Sustainable Firm Growth'].map((item, index) => (
+                     <li key={index} className="flex items-center justify-center"><span className="text-muted-foreground">{item}</span></li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           </motion.div>
 
           <motion.div whileHover={{ y: -8, scale: 1.05 }} transition={{ type: "spring", stiffness: 300 }}>
-            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full">
-              <CardHeader className="items-center text-center">
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl h-full text-center">
+              <CardHeader className="items-center">
                 <HeartHandshake className="h-10 w-10 mb-4 text-primary" />
                 <CardTitle className="text-2xl font-semibold">Our Promise</CardTitle>
               </CardHeader>
-              <CardContent className="text-center">
-                <p className="text-muted-foreground">
-                As Our company name says that “Pros” and “Peera” is combination of growth with success so, we want to achieve this meaning with you.
-                <br /><br />
-                With us, you’re not just a client. You’re a partner. We promise to always deliver:
-                <br /><br />
-                🤝 Transparency in every transaction. 
-                <br />
-                💡 Simplicity in every solution. 
-                <br />
-                📈 Growth in every partnership. 
-                </p>
+              <CardContent className="text-muted-foreground">
+                <p>We commit to delivering consistent, secure, and process-aligned back-office support that CPA firms can depend on with confidence.</p>
+                <ul className="mt-4 space-y-2">
+                  {['🔐 Confidentiality & Data Security', '📋 Process Consistency & Quality Control', '🧩 Seamless Workflow Integration', '📞 Clear & Reliable Communication', '🤝 Long-Term Partnership Focus'].map((item, index) => (
+                     <li key={index} className="flex items-center justify-center"><span className="text-muted-foreground">{item}</span></li>
+                  ))}
+                </ul>
               </CardContent>
             </Card>
           </motion.div>
         </div>
 
-        <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight">Meet Our Team</h2>
-            <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-              The visionaries behind Prospeera's success.
-            </p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-center">
-          {teamMembers.map((member, index) => (
-            <ProfileCard key={index} {...member} />
-          ))}
-        </div>
-
+        <motion.div {...fadeIn} className="text-center">
+            <Card className="bg-background/20 backdrop-blur-sm shadow-xl">
+                <CardHeader className="items-center">
+                    <Briefcase className="h-10 w-10 mb-4 text-primary" />
+                    <CardTitle className="text-3xl md:text-4xl font-bold tracking-tight">Our People & Expertise</CardTitle>
+                </CardHeader>
+                <CardContent className="max-w-3xl mx-auto text-lg text-muted-foreground">
+                    <p>
+                        Prospeera is supported by a dedicated team of accounting and operations professionals experienced in supporting CPA firm workflows, compliance standards, and reporting requirements.
+                    </p>
+                </CardContent>
+            </Card>
+        </motion.div>
       </div>
     </div>
   );

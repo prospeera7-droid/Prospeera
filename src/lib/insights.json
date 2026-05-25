@@ -1,0 +1,34 @@
+{
+  "insights": [
+    {
+      "id": 1,
+      "title": "Streamlining a CPA Firm's Operations for 40% Efficiency Gain",
+      "description": "How we helped a mid-sized CPA firm overcome seasonal workload pressures and improve turnaround times during the busy tax season.",
+      "fullStory": "A mid-sized CPA firm was struggling with tax season bottlenecks, leading to staff burnout and potential client dissatisfaction. By taking over their bookkeeping and tax preparation support, we standardized their processes and introduced automation for data entry. This freed up their core team to focus on high-value client advisory services. As a result, they reduced their average document processing time by 60% and increased overall firm efficiency by 40% during peak season, while also being able to take on more clients without hiring more full-time staff."
+    },
+    {
+      "id": 2,
+      "title": "Enabling a Small Accounting Practice to Double Its Client Base",
+      "description": "We provided the back-office engine that allowed a small practice to scale without a proportional increase in overhead costs.",
+      "fullStory": "A small accounting practice wanted to grow but was limited by its capacity to handle more clients' bookkeeping and payroll. Prospeera integrated seamlessly as their back-office partner, managing the day-to-day accounting tasks for their new clients. This allowed the practice owner to focus on business development and client relationships. Within 18 months, the practice doubled its client base and saw a 75% increase in revenue, all without the need to lease a larger office or hire and train new in-house staff."
+    },
+    {
+      "id": 3,
+      "title": "Scaling a Design Agency",
+      "description": "How we helped a freelance graphic designer transition into a full-fledged agency by optimizing their financial structure.",
+      "fullStory": "By implementing a robust accounting system and providing strategic financial advice, the designer was able to accurately track project profitability, manage cash flow effectively, and make informed decisions about hiring. This led to a 150% increase in profitability within the first year."
+    },
+    {
+      "id": 4,
+      "title": "Tax Savings for a Tech Consultant",
+      "description": "We identified over $20,000 in annual tax savings for an independent IT consultant.",
+      "fullStory": "Through a detailed review of their business expenses and by restructuring their business entity to an S-Corporation, we were able to leverage tax deductions and strategies specific to their industry. This resulted in significant savings, freeing up capital for investment in new technology."
+    },
+    {
+      "id": 5,
+      "title": "Financial Roadmap for a Writer",
+      "description": "A freelance writer secured a mortgage and started a retirement fund within two years after we developed a personalized financial roadmap.",
+      "fullStory": "We created a clear bookkeeping system to track fluctuating income, developed a realistic budget, and established a SEP IRA for retirement savings. With consistent, clean financial records, the writer successfully qualified for a home loan and is now building long-term wealth."
+    }
+  ]
+}

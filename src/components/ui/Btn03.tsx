@@ -32,16 +32,22 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
 
     const handleInteractionStart = useCallback(() => {
       setIsHovered(true);
-      animate("div", { x: 0, y: 0 }, { type: "spring", stiffness: 50, damping: 10 });
+      animate(".particle", { x: 0, y: 0 }, { type: "spring", stiffness: 50, damping: 10 });
     }, [animate]);
 
     const handleInteractionEnd = useCallback(() => {
       setIsHovered(false);
-      animate("div", (i) => ({ x: particles[i]?.x, y: particles[i]?.y }), {
-        type: "spring",
-        stiffness: 100,
-        damping: 15,
-      });
+      const sequence: any[] = particles.map((p, i) => ([
+        `.particle-${i}`,
+        { x: p.x, y: p.y },
+        {
+          type: "spring",
+          stiffness: 100,
+          damping: 15,
+          delay: Math.random() * 0.1,
+        },
+      ]));
+      animate(sequence);
     }, [animate, particles]);
     
     const Particles = () => (
@@ -49,9 +55,10 @@ const Btn03 = forwardRef<HTMLButtonElement, Btn03Props>(
         {particles.map((particle, index) => (
           <motion.div
             key={index}
-            custom={index}
             initial={{ x: particle.x, y: particle.y }}
             className={cn(
+              `particle-${index}`,
+              "particle",
               "absolute w-1.5 h-1.5 rounded-full",
               "bg-primary-foreground/50",
               "transition-opacity duration-300",
